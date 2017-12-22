@@ -1,0 +1,55 @@
+package com.hf.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+
+/**
+ * mvc配置类
+ * Created by fjm on 2017/12/22.
+ */
+@Configuration//表名是一个配置文件
+@EnableWebMvc//开启mvc注解驱动
+@ComponentScan("com.hf.controllers")//扫描控制器
+public class MvcConfig extends WebMvcConfigurerAdapter{
+
+//    使用配置文件配置
+//    @Bean
+//    public SpringResourceTemplateResolver templateResolver() {
+//        SpringResourceTemplateResolver viewResolver = new SpringResourceTemplateResolver();
+//        viewResolver.setPrefix("/WEB-INF/classes/views/");
+//        viewResolver.setSuffix(".html");
+//        viewResolver.setTemplateMode("HTML");
+//        return viewResolver;
+//    }
+//
+//    @Bean
+//    public SpringTemplateEngine templateEngine(){
+//        SpringTemplateEngine engine = new SpringTemplateEngine();
+//        engine.setTemplateResolver(templateResolver());
+//        return engine;
+//    }
+//
+//    @Bean
+//    public ThymeleafViewResolver thymeleafViewResolver(){
+//        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+//        viewResolver.setTemplateEngine(templateEngine());
+//        return viewResolver;
+//    }
+
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //指定访问静态资源文件的路径为/js/**和/css/**
+        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");
+        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
+        super.addResourceHandlers(registry);
+    }
+}
