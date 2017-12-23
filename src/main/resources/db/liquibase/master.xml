@@ -6,6 +6,6 @@
 
 
     <!--relativeToChangelogFile表示是否使用绝对路径   test.sql为测试文件-->
-    <include file="classpath:db/liquibase/sqlFile/test.sql" relativeToChangelogFile="false"/>
+    <include file="classpath:db/liquibase/sqlFile/demo.sql" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
