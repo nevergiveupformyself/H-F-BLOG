@@ -75,6 +75,12 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.1.0</version>
 		</dependency>
+		<!--durid连接池-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.25</version>
+		</dependency>
 
 		<!--热部署插件-->
 		<dependency>
