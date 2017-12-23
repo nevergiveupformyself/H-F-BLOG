@@ -2,7 +2,7 @@ package com.hf.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.hf.service.IBaseService;
-import com.hf.util.BaseMapper;
+import com.hf.util.MyMapper;
 import com.hf.util.ProxySelf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,7 +16,7 @@ import java.util.List;
 public abstract class BaseServiceImpl<T> implements IBaseService<T>, ProxySelf<T> {
 
     @Autowired
-    private BaseMapper<T> baseMapper;
+    private MyMapper<T> baseMapper;
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
