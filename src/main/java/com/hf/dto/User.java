@@ -1,6 +1,7 @@
 package com.hf.dto;
 
 import javax.persistence.*;
+import java.util.Set;
 
 public class User {
     @Id
@@ -9,6 +10,17 @@ public class User {
     private String username;
 
     private String password;
+
+    @Transient
+    private Set<Role> roles;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     /**
      * @return uid

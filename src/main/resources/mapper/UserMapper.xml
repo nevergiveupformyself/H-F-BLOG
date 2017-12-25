@@ -5,8 +5,28 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="uid" property="uid" jdbcType="INTEGER" />
-    <result column="username" property="username" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
+    <id property="uid" column="uid"/>
+    <result property="username" column="username"/>
+    <result property="password" column="password"/>
+    <collection property="roles" ofType="com.hf.dto.Role">
+      <id property="rid" column="rid"/>
+      <result property="rname" column="rname"/>
+      <collection property="modules" ofType="com.hf.dto.Module">
+        <id property="mid" column="mid"/>
+        <result property="mname" column="mname"/>
+      </collection>
+    </collection>
   </resultMap>
+
+  <select id="findByUserName" resultMap="BaseResultMap">
+      SELECT
+          u.*, r.*, m.*
+      FROM
+          USER u
+      INNER JOIN user_role ur ON ur.uid = u.uid
+      INNER JOIN role r ON r.rid = ur.rid
+      INNER JOIN module_role mr ON mr.rid = r.rid
+      INNER JOIN module m ON mr.mid = m.mid
+      WHERE username=#{username}
+  </select>
 </mapper>

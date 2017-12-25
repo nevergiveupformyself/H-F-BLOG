@@ -1,12 +1,25 @@
 package com.hf.dto;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
-public class Module {
+public class Module implements Serializable{
     @Id
     private Integer mid;
 
     private String mname;
+
+    @Transient
+    private Set<Role> roles;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     /**
      * @return mid

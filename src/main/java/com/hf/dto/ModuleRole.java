@@ -1,9 +1,10 @@
 package com.hf.dto;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "module_role")
-public class ModuleRole {
+public class ModuleRole implements Serializable {
     private Integer rid;
 
     private Integer mid;
