@@ -7,5 +7,7 @@
 
     <!--relativeToChangelogFile表示是否使用绝对路径   test.sql为测试文件-->
     <include file="classpath:db/liquibase/sqlFile/demo.sql" relativeToChangelogFile="false"/>
+    <!--shior权限控制相关表-->
+    <include file="classpath:db/liquibase/sqlFile/shiro.sql" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
