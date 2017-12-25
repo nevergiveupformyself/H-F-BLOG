@@ -50,6 +50,8 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         //指定访问静态资源文件的路径为/js/**和/css/**
         registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");
         registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
+        registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/");
+
         super.addResourceHandlers(registry);
     }
 }

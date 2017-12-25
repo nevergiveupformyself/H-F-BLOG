@@ -3,7 +3,8 @@
     display: block;
     width: 100%;
     height: 80px;
-    color: #01699F;
+    /*color: #01699F;*/
+
     line-height: 80px;
     font: 14px  "Comic Sans MS", Times, serif;
     text-decoration: none;
@@ -16,4 +17,12 @@
     height: 80px;
     line-height: 80px;
     margin-left: 30px;
+}
+
+.hf-title .hf-color-h{
+    color: rgba(242,156,177,0.7);
+}
+
+.hf-title .hf-color-f{
+    color: rgba(0, 146, 192, 0.7);
 }
