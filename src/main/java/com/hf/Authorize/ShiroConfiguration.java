@@ -22,26 +22,28 @@ public class ShiroConfiguration {
     @Bean
     public ShiroFilterFactoryBean shiroFilter(@Qualifier("securityManager") SecurityManager securityManager){
         ShiroFilterFactoryBean bean=new ShiroFilterFactoryBean();
+        //设置SecurityManager
         bean.setSecurityManager(securityManager);
         //配置登录的url和登录成功的url
         bean.setLoginUrl("/login");
         bean.setSuccessUrl("/index.html");
         //配置访问权限
         LinkedHashMap<String, String> filterChainDefinitionMap=new LinkedHashMap<>();
-        filterChainDefinitionMap.put("/login", "anon"); //表示可以匿名访问
+        //anon表示可以匿名访问,authc表示需要认证才能访问
+        filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/login?logout","anon");
         filterChainDefinitionMap.put("/index.html","anon");
         filterChainDefinitionMap.put("/js/**","anon");
         filterChainDefinitionMap.put("/images/**","anon");
         filterChainDefinitionMap.put("/css/**","anon");
-        filterChainDefinitionMap.put("/*", "authc");//表示需要认证才可以访问
+        filterChainDefinitionMap.put("/*", "authc");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/*.*", "authc");
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean;
     }
 
-    //安全事务管理器；即所有与安全有关的操作都会与SecurityManager交互；且它管理着所有Subject
+    //核心安全事务管理器；即所有与安全有关的操作都会与SecurityManager交互；且它管理着所有Subject
     @Bean(name="securityManager")
     public SecurityManager securityManager(@Qualifier("authRealm") AuthRealm authRealm) {
         DefaultWebSecurityManager manager=new DefaultWebSecurityManager();
@@ -70,12 +72,13 @@ public class ShiroConfiguration {
         return new LifecycleBeanPostProcessor();
     }
 
-    @Bean
-    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
-        DefaultAdvisorAutoProxyCreator creator=new DefaultAdvisorAutoProxyCreator();
-        creator.setProxyTargetClass(true);
-        return creator;
-    }
+//    改为使用注解配置的方式
+//    @Bean
+//    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
+//        DefaultAdvisorAutoProxyCreator creator=new DefaultAdvisorAutoProxyCreator();
+//        creator.setProxyTargetClass(true);
+//        return creator;
+//    }
 
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(@Qualifier("securityManager") SecurityManager manager) {
