@@ -52,6 +52,7 @@ ul{
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
 }
+
 .f-color{
     color: white;
     background-color: rgba(0, 146, 192, 0.7);
@@ -63,7 +64,7 @@ ul{
 }
 
 
-.hf-reversal .hf-item:hover .hf-cover{
+.hf-reversal .hf-item .hf-cover.hf-hover{
     transform: rotate(0deg) !important;
     -webkit-transform: rotate(0deg) !important;
     -moz-transform: rotate(0deg) !important;
