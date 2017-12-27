@@ -18,6 +18,7 @@ public class LoginController {
     @RequestMapping("/login")
     public String login(String username,String password,HttpSession session) {
         UsernamePasswordToken usernamePasswordToken=new UsernamePasswordToken(username,password);
+        //所有Subject都绑定到SecurityManager，与Subject的所有交互都会委托给SecurityManager；可以把Subject认为是一个门面；SecurityManager才是实际的执行者
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(usernamePasswordToken);   //完成登录

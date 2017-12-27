@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * Realm域，Shiro从从Realm获取安全数据
+ *
  * Created by fjm on 2017/12/25.
  */
 public class AuthRealm extends AuthorizingRealm {
@@ -51,6 +53,6 @@ public class AuthRealm extends AuthorizingRealm {
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;//获取用户输入的token
         String username = usernamePasswordToken.getUsername();
         User user = userService.findByUserName(username);//根据用户名,获取对应的权限和密码
-        return new SimpleAuthenticationInfo(user, user.getPassword(), this.getClass().getName());//放入shiro.调用CredentialsMatcher检验密码
+        return new SimpleAuthenticationInfo(user, user.getPassword(), this.getClass().getName());
     }
 }
