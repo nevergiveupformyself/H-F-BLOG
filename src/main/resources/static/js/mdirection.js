@@ -35,8 +35,8 @@ if (typeof jQuery === 'undefined') {
         var height = $el.height()
 
         // 获得相对于中心点的 x，y坐标
-        var x = (e.offsetX -( width / 2 )) * (width >height ? (height / width ):1);
-        var y = (e.offsetY- ( height / 2 )) * (height >width ? (width / height):1);
+        var x = (e.pageX - $el.offset().left-( width / 2 )) * (width >height ? (height / width ):1);
+        var y = (e.pageY- $el.offset().top -( height / 2 )) * (height >width ? (width / height):1);
         // Math.atan2(y,x) 获得斜率 -PI 到PI之间的数
         var number = Math.round((((Math.atan2(y, x) * 180 / Math.PI) + 180) / 90) + 3) % 4;
         return number;

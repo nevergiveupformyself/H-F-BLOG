@@ -8,6 +8,7 @@
     <link th:href="@{css/header.css}" rel="stylesheet" type="text/css"/>
     <script th:src="@{js/jquery-3.2.1.min.js}" type="text/javascript"></script>
     <script th:src="@{js/mdirection.js}" type="text/javascript"></script>
+    <script th:src="@{js/index.js}" type="text/javascript"></script>
 </head>
 <body>
    <header th:replace="common/header :: header"></header>
@@ -16,51 +17,56 @@
            <ul class="hf-reversal">
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color left">
+                   <div class="hf-cover f-color">
 
                    </div>
                </li>
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color left">
+                   <div class="hf-cover f-color">
 
                    </div>
                </li>
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color left">
+                   <div class="hf-cover f-color">
+
+                   </div>
+               </li>
+
+               <li class="hf-item">
+                   <img th:src="@{images/icon/java.png}"/>
+                   <div class="hf-cover f-color">
 
                    </div>
                </li>
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color left">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color left">
+                   <div class="hf-cover f-color">
 
                    </div>
                </li>
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color left">
+                   <div class="hf-cover h-color">
 
                    </div>
                </li>
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color left">
+                   <div class="hf-cover h-color">
 
                    </div>
                </li>
                <li class="hf-item">
                    <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color left">
+                   <div class="hf-cover h-color">
+
+                   </div>
+               </li>
+               <li class="hf-item">
+                   <img th:src="@{images/icon/java.png}"/>
+                   <div class="hf-cover h-color">
 
                    </div>
                </li>
@@ -69,72 +75,8 @@
    </div>
    <script type="text/javascript" th:inline="javascript">
       /*<![CDATA[*/
-       function getTransFormObj(element,direction){
 
-           function getCssObj(defaultDirection){
-               var directionObj = {
-                   "top left":"rotate(-90deg)",
-                   "left top":"rotate(90deg)",
-                   "top right":"rotate(90deg)",
-                   "right top":"rotate(-90deg)",
-                   "bottom left":"rotate(90deg)",
-                   "left bottom":"rotate(-90deg)",
-                   "bottom right":"rotate(-90deg)",
-                   "right bottom":"rotate(90deg)"
-               };
-               var cssObj = {};
-
-               var arr = ["top","right","bottom","left"],oldDirection;
-               for(var i=0;i< arr.length;i++){
-                   if(element.hasClass(arr[i])){
-                       oldDirection = arr[i];
-                       cssObj["transform-origin"] = direction +" "+ arr[i];
-                       break;
-                   }
-               }
-               if(!directionObj[cssObj["transform-origin"]]){
-                   cssObj["transform-origin"] = defaultDirection;
-               }
-               cssObj["transform"] = directionObj[cssObj["transform-origin"]];
-               return cssObj;
-           }
-
-           var obj = {};
-           if(!element.hasClass(direction)){
-               switch (direction){
-                   case "top":
-                       obj = getCssObj("top left");
-                       break;
-                   case "right":
-                       obj = getCssObj("right bottom");
-                       break;
-                   case "bottom":
-                       obj = getCssObj("bottom left");
-                       break;
-                   case "left":
-                       obj = getCssObj("left bottom");
-                       break;
-               }
-           }
-           return obj;
-       }
-
-       $(".hf-item").hover(function(e){
-           var item = $(this), cover = item.find(".hf-cover");
-           item.mDirection(e,function(direction){
-               var obj = getTransFormObj(cover,direction);
-               cover.css(obj).removeClass("top right bottom left").addClass(direction).addClass("hf-hover");
-
-           })
-       },function(e){
-           var cover = $(this).find(".hf-cover")
-           $(this).mDirection(e,function(direction){
-               var obj = getTransFormObj(cover,direction);
-               cover.css(obj).removeClass("top right bottom left").addClass(direction).removeClass("hf-hover");
-           })
-       })
-
-
+          initImgCover();
 
      /*]]>*/
    </script>

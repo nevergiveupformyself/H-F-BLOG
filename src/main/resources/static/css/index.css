@@ -51,6 +51,8 @@ ul{
     transition: all 0.35s;
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
+    display: none;
+    border: 1px solid transparent;
 }
 
 .f-color{
@@ -70,6 +72,7 @@ ul{
     -moz-transform: rotate(0deg) !important;
 }
 
+/*
 .hf-reversal .hf-item .hf-cover.right{
     transform-origin: right bottom;
     -webkit-transform-origin: right bottom;
@@ -107,4 +110,4 @@ ul{
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
-}
+}*/
