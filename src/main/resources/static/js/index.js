@@ -1,6 +1,3 @@
-if (typeof jQuery === 'undefined') {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery')
-}
 var initImgCover = function(){
     var directionObj = {
         "top-left":"rotate(-90deg)",
