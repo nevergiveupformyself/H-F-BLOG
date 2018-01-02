@@ -97,17 +97,34 @@ var initImgCover = function(){
         });
     }
 
-    $(".hf-item").hover(function(e){
-        var item = $(this), cover = item.find(".hf-cover:not(.hf-clone)");
-        initCover(item);
-        item.mDirection(e,function(direction){
-            transFormByDirection(cover,direction,true);
-        })
-    },function(e){
-        var item = $(this);
-        var cover = item.find(".hf-cover:not(.hf-clone)");
-        $(this).mDirection(e,function(direction){
-            transFormByDirection(cover,direction,false);
-        })
+    $(".hf-item").bind({
+        "pointerenter":function(e){
+            var chromePointerEvents = typeof PointerEvent === 'function';
+            if (chromePointerEvents) {
+                if (e.pointerId === undefined) {
+                    return;
+                }
+                // mouseleave不触发
+                this.setPointerCapture(e.pointerId);
+            }
+            var item = $(this), cover = item.find(".hf-cover:not(.hf-clone)");
+            initCover(item);
+            item.mDirection(e,function(direction){
+                transFormByDirection(cover,direction,true);
+            })
+        },
+        "pointerleave":function(e){
+            var item = $(this),cover = item.find(".hf-cover:not(.hf-clone)");
+            $(this).mDirection(e,function(direction){
+                transFormByDirection(cover,direction,false);
+                var chromePointerEvents = typeof PointerEvent === 'function';
+                if (chromePointerEvents) {
+                    if (e.pointerId === undefined) {
+                        return;
+                    }
+                    this.releasePointerCapture(e.pointerId);
+                }
+            })
+        }
     })
 }
