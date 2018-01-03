@@ -1,0 +1,170 @@
+body{
+    text-align: center;
+}
+
+.user-login{
+    text-align: center;
+    box-shadow: 3px 3px 5px #ececec;
+    border: 1px solid #ececec;
+    padding: 30px;
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+#Mushroom1{
+    position: relative;
+    display: inline-block;
+}
+
+#Mushroom1 .head{
+    position: relative;
+    width: 100px;
+    height: 60px;
+    border-radius: 50px 50px 10px 10px;
+    background: #FF0F1F ;
+    background: -webkit-radial-gradient(right top,#fff 10%,#fb8e83 20%,#FF0F1F 75%,#555);
+    background: -moz-radial-gradient(right top,#fff 10%,#fb8e83 20%,#FF0F1F 75%,#555);
+    background: -ms-radial-gradient(right top,#fff 10%,#fb8e83 20%,#FF0F1F 75%,#555);
+    box-shadow: -2px 2px 5px #555;
+    z-index: 1;
+}
+
+#Mushroom1 .head .dots .dot1{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 10px;
+    top: 0px;
+    right: 5px;
+}
+#Mushroom1 .head .dots .dot2{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 10px;
+    top: 30px;
+    right: 20px;
+}
+#Mushroom1 .head .dots .dot3{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 10px;
+    top: 10px;
+    left: 20px;
+}
+
+#Mushroom1 .foot{
+    position: relative;
+    background: #ccc7c7;
+    background: -webkit-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -moz-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -ms-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    border-radius: 0 0 10px 10px;
+    width: 40px;
+    height: 40px;
+    left: 30px;
+    top: -1px;
+    z-index: 0;
+    box-shadow: -2px 2px 5px #555;
+}
+
+#Mushroom1 .shadow{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    border-radius: 100px;
+    background: #555;
+    top: -26px;
+    background: -webkit-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -moz-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -ms-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    z-index: -1;
+    left: -4px;
+}
+
+#Mushroom2{
+    position: relative;
+    display: inline-block;
+}
+
+#Mushroom2 .head{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    border-radius: 35px 35px 3px 3px;
+    background: #FF0F1F ;
+    background: -webkit-radial-gradient(right top,#fff 10%,#fb8e83 20%,#FF0F1F 75%,#555);
+    background: -moz-radial-gradient(right top,#fff 10%,#fb8e83 20%,#FF0F1F 75%,#555);
+    background: -ms-radial-gradient(right top,#fff 10%,#fb8e83 20%,#FF0F1F 75%,#555);
+    box-shadow: -2px 2px 5px #555;
+    z-index: 1;
+}
+
+#Mushroom2 .head .dots .dot1{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 0px;
+    left: 5px;
+}
+#Mushroom2 .head .dots .dot2{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 20px;
+    left: 20px;
+}
+#Mushroom2 .head .dots .dot3{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 10px;
+    right: 10px;
+}
+
+#Mushroom2 .foot{
+    position: relative;
+    background: #ccc7c7;
+    background: -webkit-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -moz-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -ms-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    border-radius: 0 0 10px 10px;
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    top: -1px;
+    z-index: 0;
+    box-shadow: -2px 2px 5px #555;
+}
+
+#Mushroom2 .shadow{
+    position: relative;
+    width: 45px;
+    height: 20px;
+    border-radius: 100px;
+    background: #555;
+    top: -15px;
+    background: -webkit-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -moz-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -ms-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    z-index: -1;
+    left: -4px;
+}
