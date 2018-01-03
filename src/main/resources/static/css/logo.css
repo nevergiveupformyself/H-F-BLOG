@@ -1,0 +1,236 @@
+#Mushroom1{
+    position: relative;
+    display: inline-block;
+}
+
+#Mushroom1 .head{
+    position: relative;
+    width: 100px;
+    height: 60px;
+    border-radius: 50px 50px 10px 10px;
+    background: #FF0F1F ;
+    background: -webkit-radial-gradient(right top,#fff 10%,rgba(0, 146, 192, 0.7) 20%,rgba(0, 146, 192, 1) 75%,#555);
+    background:-webkit-radial-gradient(right top,#fff 10%,rgba(0, 146, 192, 0.7) 20%,rgba(0, 146, 192, 1) 75%,#555);
+    background: -webkit-radial-gradient(right top,#fff 10%,rgba(0, 146, 192, 0.7) 20%,rgba(0, 146, 192, 1) 75%,#555);
+    box-shadow: -2px 2px 5px #555;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#Mushroom1 .head .dots .dot1{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 10px;
+    top: 0px;
+    right: 5px;
+}
+#Mushroom1 .head .dots .dot2{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 10px;
+    top: 30px;
+    right: 20px;
+}
+#Mushroom1 .head .dots .dot3{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 10px;
+    top: 10px;
+    left: 20px;
+}
+
+#Mushroom1 .foot{
+    position: relative;
+    background: #ccc7c7;
+    background: -webkit-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -moz-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -ms-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    border-radius: 0 0 10px 10px;
+    width: 40px;
+    height: 40px;
+    left: 30px;
+    top: -1px;
+    z-index: 0;
+    box-shadow: -2px 2px 5px #555;
+}
+
+#Mushroom1 .shadow{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    border-radius: 100px;
+    background: #555;
+    top: -26px;
+    background: -webkit-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -moz-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -ms-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    z-index: -1;
+    left: -4px;
+}
+
+#Mushroom2{
+    position: relative;
+    display: inline-block;
+    top: 20px;
+}
+
+#Mushroom2 .head{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    border-radius: 35px 35px 3px 3px;
+    background: #FF0F1F ;
+    background: -webkit-radial-gradient(right top,#fff 10%,rgba(242, 156, 177, 0.7) 20%,rgba(242, 156, 177, 1) 75%,#555);
+    background: -webkit-radial-gradient(right top,#fff 10%,rgba(242, 156, 177, 0.7) 20%,rgba(242, 156, 177, 1) 75%,#555);
+    background: -webkit-radial-gradient(right top,#fff 10%,rgba(242, 156, 177, 0.7) 20%,rgba(242, 156, 177, 1) 75%,#555);
+    box-shadow: -2px 2px 5px #555;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#Mushroom2 .head .dots .dot1{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 0px;
+    left: 5px;
+}
+#Mushroom2 .head .dots .dot2{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 20px;
+    left: 20px;
+}
+#Mushroom2 .head .dots .dot3{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 10px;
+    right: 10px;
+}
+
+#Mushroom2 .foot{
+    position: relative;
+    background: #ccc7c7;
+    background: -webkit-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -moz-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    background: -ms-radial-gradient(top right,#fbfbfb 10%,#f1ecec 20%,#ccc7c7 55%,#555);
+    border-radius: 0 0 10px 10px;
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    top: -1px;
+    z-index: 0;
+    box-shadow: -2px 2px 5px #555;
+}
+
+#Mushroom2 .shadow{
+    position: relative;
+    width: 45px;
+    height: 20px;
+    border-radius: 100px;
+    background: #555;
+    top: -15px;
+    background: -webkit-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -moz-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    background: -ms-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
+    z-index: -1;
+    left: -4px;
+}
+
+/*#grass1{
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    position: relative;
+    background: #5ac066;
+    top: -50px;
+    left: -250px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: -3px 2px 10px #555;
+    z-index: -2;
+}
+
+#grass2{
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    position: relative;
+    background: #5ac066;
+    top: 0px;
+    left: -200px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: -3px 2px 10px #555;
+}
+.grass .top1{
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #5ac066;
+    border-right: 20px solid transparent;
+    border-top: 30px solid transparent;
+}
+
+.grass .top2{
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid #5ac066;
+}
+
+.grass .top3{
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-right: 20px solid #5ac066;
+    border-left: 20px solid transparent;
+    border-top: 30px solid transparent;
+}
+
+.grass .top4{
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid #5ac066;
+}
+
+#grass3{
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    position: relative;
+    background: #5ac066;
+    top: -40px;
+    left: -130px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: -3px 2px 10px #555;
+}*/
