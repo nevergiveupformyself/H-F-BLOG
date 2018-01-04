@@ -1,6 +1,5 @@
 body{
-    text-align: center;
-    font: 14px  "Comic Sans MS", Times, serif;
+    font: 16px  "Comic Sans MS", Times, serif;
     text-decoration: none;
     margin: 0;
 }
@@ -10,16 +9,61 @@ body{
     box-shadow: 3px 3px 5px #ececec;
     border: 1px solid #ececec;
     padding: 30px;
-    width: 300px;
+    width: 400px;
     height: 400px;
-    margin: 150px auto 0px;
+    margin: 80px 100px;
+    float: right;
     border-radius: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(242,156,177,0.7);
-    z-index: 5;
 }
 
+.user-login .title{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    color: rgba(0, 146, 192, 1);
+}
+
+.user-login .login-item{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.user-login .label{
+    width: 80px;
+    display: inline-block;
+}
+#username,#password{
+    border: 1px solid #ececec;
+    line-height: 35;
+    height: 35px;
+    text-indent: 10px;
+    border-radius: 3px;
+    font: inherit;
+}
+
+#username:focus,#username:hover,#password:focus,#password:hover{
+    border: 1px solid rgba(0, 146, 192, 0.7);
+    outline: none;
+}
+
+.user-login .submitBtn{
+    margin: 20px 40px 0 0;
+    width: 80px;
+    height: 35px;
+    font-size: 16px;
+    float: right;
+    background: #fff;
+    border: 1px solid rgba(0, 146, 192, 0.7);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.user-login .submitBtn:focus,.user-login .submitBtn:hover{
+    border: rgba(0, 146, 192, 1);
+    background: rgba(0, 146, 192, 0.7);
+    outline: none;
+    color: #fff;
+}
+.user-login .warning{
+    color: #e02222;
+    font-weight: bold;
+}

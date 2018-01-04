@@ -114,7 +114,7 @@ var initImgCover = function(){
             })
         },
         "pointerleave":function(e){
-            var item = $(this),cover = item.find(".hf-cover:not(.hf-clone)");
+            var that = this,item = $(this),cover = item.find(".hf-cover:not(.hf-clone)");
             $(this).mDirection(e,function(direction){
                 transFormByDirection(cover,direction,false);
                 var chromePointerEvents = typeof PointerEvent === 'function';
@@ -122,7 +122,7 @@ var initImgCover = function(){
                     if (e.pointerId === undefined) {
                         return;
                     }
-                    this.releasePointerCapture(e.pointerId);
+                    that.releasePointerCapture(e.pointerId);
                 }
             })
         }
