@@ -2,6 +2,7 @@ body{
     text-align: center;
     font: 14px  "Comic Sans MS", Times, serif;
     text-decoration: none;
+    margin: 0;
 }
 
 .user-login{
@@ -11,14 +12,14 @@ body{
     padding: 30px;
     width: 300px;
     height: 400px;
-    margin: auto;
+    margin: 150px auto 0px;
     border-radius: 20px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: rgba(242,156,177,0.7);
+    z-index: 5;
 }
-
-
 

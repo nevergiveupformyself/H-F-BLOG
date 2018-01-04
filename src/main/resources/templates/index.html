@@ -10,9 +10,20 @@
     <script th:src="@{js/handjs/hand.js}" type="text/javascript"></script>
     <script th:src="@{js/mdirection.js}" type="text/javascript"></script>
     <script th:src="@{js/index.js}" type="text/javascript"></script>
+
 </head>
 <body>
-   <header th:replace="common/header :: header"></header>
+   <header>
+       <div class="hf-header">
+           <div th:replace="common/header :: header"></div>
+           <div class="hf-user">
+               <!--判断当前user存在吗 不存在显示登录-->
+               <a id="login" href="javascript:void(0)"  >登录</a>
+               <!--<span>&nbsp;|&nbsp;</span>-->
+               <!--<a id="register" th:href="">注册</a>-->
+           </div>
+       </div>
+   </header>
    <div class="hf-container">
        <div class="hf-content">
            <ul class="hf-reversal">
@@ -78,6 +89,9 @@
       /*<![CDATA[*/
 
           initImgCover();
+          function openLoginWin(){
+
+          }
 
      /*]]>*/
    </script>
