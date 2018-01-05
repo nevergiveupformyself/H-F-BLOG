@@ -14,14 +14,15 @@
         <div th:replace="common/header :: header"></div>
     </div>
 </header>
+
 <div class="user-login">
     <div class="login-content">
         <div class="title">登录</div>
         <span class="warning" th:text="${message}"></span>
-        <form class="login-form" action="@{/login}" method="post" autocomplete="off">
+        <form class="login-form" th:action="@{/login}" method="post" autocomplete="off">
             <div class="login-item">
                 <span class="label"><span class="warning">* </span>用户名:</span>
-                <input type="text"  placeholder="名称/邮箱/电话号码" id="username" name="UserName" required="required"/>
+                <input type="text"  placeholder="名称/邮箱/电话号码" id="username" name="username" required="required"/>
             </div>
             <div class="login-item">
                 <span class="label"><span class="warning">* </span>密　码:</span>
@@ -37,7 +38,37 @@
         </form>
     </div>
 </div>
-
+<div id ="bg-login">
+    <div class="bg-shadow"></div>
+    <div class="bg-text">
+        冯景珉是头猪。 ——H
+    </div>
+    <div id="Mushroom3">
+        <div class="head">
+            <div class="dots">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+                <div class="dot3"></div>
+                <div class="dot4"></div>
+            </div>
+        </div>
+        <div class="foot">
+        </div>
+        <div class="shadow"></div>
+    </div>
+    <div id="Mushroom4">
+        <div class="head">
+            <div class="dots">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+                <div class="dot3"></div>
+            </div>
+        </div>
+        <div class="foot">
+        </div>
+        <div class="shadow"></div>
+    </div>
+</div>
 <script type="text/javascript" th:inline="javascript">
     /*<![CDATA[*/
 
