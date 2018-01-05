@@ -29,7 +29,7 @@ public class LoginController {
             subject.login(usernamePasswordToken);   //完成登录
             User user=(User) subject.getPrincipal();
             session.setAttribute("user", user);
-            modelAndView.setViewName(VIEW_INDEX);
+            modelAndView.setViewName("redirect:"+VIEW_INDEX+".html");
         } catch(Exception e) {
             modelAndView.setViewName(VIEW_LOGIN);
             modelAndView.addObject("message","账号或密码错误");
