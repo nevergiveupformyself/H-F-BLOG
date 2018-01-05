@@ -1,9 +1,11 @@
 package com.hf.config;
 
+import com.hf.interceptors.RequestInterceptors;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -44,7 +46,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 //        return viewResolver;
 //    }
 
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //指定访问静态资源文件的路径为/js/**和/css/**
@@ -56,4 +57,16 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 
         super.addResourceHandlers(registry);
     }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(requestInterceptors()).addPathPatterns("/**");
+        super.addInterceptors(registry);
+    }
+
+    @Bean
+    public RequestInterceptors requestInterceptors(){
+        return new RequestInterceptors();
+    }
+
 }

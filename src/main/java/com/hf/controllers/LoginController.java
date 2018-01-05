@@ -6,8 +6,10 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -19,8 +21,9 @@ public class LoginController {
     private static final String VIEW_LOGIN = "/login";
     private static final String VIEW_INDEX = "/index";
 
-    @RequestMapping("/login")
-    public ModelAndView login(String username, String password, HttpSession session) {
+    @RequestMapping(value = {"/login"},method = RequestMethod.POST)
+    public ModelAndView login(HttpServletRequest request, String username, String password) {
+        HttpSession session = request.getSession(false);
         UsernamePasswordToken usernamePasswordToken=new UsernamePasswordToken(username,password);
         //所有Subject都绑定到SecurityManager，与Subject的所有交互都会委托给SecurityManager；可以把Subject认为是一个门面；SecurityManager才是实际的执行者
         Subject subject = SecurityUtils.getSubject();
@@ -37,8 +40,8 @@ public class LoginController {
         return modelAndView;
     }
 
-    @RequestMapping("/login?logout")
-    public String logOut(HttpSession session) {
+    @RequestMapping("/logout")
+    public String logOut(HttpServletRequest request) {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return "login";
