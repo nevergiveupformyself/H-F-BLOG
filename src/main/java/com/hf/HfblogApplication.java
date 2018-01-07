@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //						HibernateJpaAutoConfiguration.class})//在未配置db之前,先取消数据库的自动配置
 @MapperScan(basePackages = "com.hf.dao")//mapper扫描包路径
 @EnableTransactionManagement//启动事物注解
-@EnableAspectJAutoProxy(exposeProxy = true)//启用aop自动代理,默认使用cglib
+@EnableAspectJAutoProxy(exposeProxy = true)//暴露当前aop代理
 @SpringBootApplication
 public class HfblogApplication {
 	public static void main(String[] args) {
