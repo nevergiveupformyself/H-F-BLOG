@@ -1,96 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>H &amp; F</title>
-    <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{css/header.css}" rel="stylesheet" type="text/css"/>
-    <script th:src="@{js/jquery-3.2.1.min.js}" type="text/javascript"></script>
-    <script th:src="@{js/handjs/hand.js}" type="text/javascript"></script>
-    <script th:src="@{js/mdirection.js}" type="text/javascript"></script>
-    <script th:src="@{js/index.js}" type="text/javascript"></script>
-
-</head>
+<head th:replace="common/header :: head"></head>
 <body>
    <header>
        <div class="hf-header">
            <div th:replace="common/header :: header"></div>
+           <ul class="hf-nav">
+               <li class="hf-item active">
+                   <a href="#home" data-toggle="tab">首页</a>
+               </li>
+               <li class="hf-item">
+                   <a href="#publish" data-toggle="tab">发布</a>
+               </li>
+           </ul>
            <div class="hf-user">
-               <!--判断当前user存在吗 不存在显示登录-->
-               <a id="login" th:href="@{login.html}"  >登录</a>
-               <!--<span>&nbsp;|&nbsp;</span>-->
-               <!--<a id="register" th:href="">注册</a>-->
+               <div th:if="${session.user.username}">
+                   <span th:text="${session.user.username}"></span>
+               </div>
+               <div th:unless="${session.user.username}">
+                   <a id="login" th:href="@{login.html}">登录</a>
+               </div>
            </div>
        </div>
    </header>
    <div class="hf-container">
-       <div class="hf-content">
-           <ul class="hf-reversal">
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color">
-
-                   </div>
-               </li>
-
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover f-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color">
-
-                   </div>
-               </li>
-               <li class="hf-item">
-                   <img th:src="@{images/icon/java.png}"/>
-                   <div class="hf-cover h-color">
-
-                   </div>
-               </li>
-           </ul>
+       <div class="tab-content">
+           <div role="tabpanel" class="tab-pane active"  id="home">
+               <div th:replace="home:: home"></div>
+           </div>
+           <div role="tabpanel" class="tab-pane" id="publish">...</div>
        </div>
    </div>
    <script type="text/javascript" th:inline="javascript">
-      /*<![CDATA[*/
-
-          initImgCover();
-
-     /*]]>*/
+       /*<![CDATA[*/
+      
+       /*]]>*/
    </script>
 </body>
 </html>

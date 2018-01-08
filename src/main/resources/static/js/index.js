@@ -97,7 +97,7 @@ var initImgCover = function(){
         });
     }
 
-    $(".hf-item").bind({
+    $(".hf-reversal .hf-item").bind({
         "pointerenter":function(e){
             var chromePointerEvents = typeof PointerEvent === 'function';
             if (chromePointerEvents) {

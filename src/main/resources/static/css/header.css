@@ -1,11 +1,8 @@
 .hf-header
  {
     display: block;
-    width: 100%;
+    padding: 0px 200px;
     height: 80px;
-    /*color: #01699F;*/
-    line-height: 80px;
-    font: 14px  "Comic Sans MS", Times, serif;
     text-decoration: none;
     box-shadow: 3px 3px 8px #ececec;
 }
@@ -31,22 +28,6 @@
     color: rgba(0, 146, 192, 0.7);
 }
 
-.hf-user{
-    display: inline-block;
-    height: 80px;
-    line-height: 80px;
-    float: right;
-    margin-right: 30px;
-}
-
-#login,#register{
-    cursor: pointer;
-    text-decoration: none;
-    color: #ccc;
-}
-#login:hover{
-    color: #000;
-}
 
 
 #Mushroom2{

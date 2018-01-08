@@ -1,7 +1,8 @@
 body{
-    font: 16px  "Comic Sans MS", Times, serif;
+    font:  16px "Comic Sans MS", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     text-decoration: none;
     margin: 0;
+    color: #000;
 }
 
 .user-login{
@@ -11,9 +12,12 @@ body{
     padding: 30px;
     width: 400px;
     height: 400px;
-    margin: 80px 100px;
-    float: right;
+    margin: 0px 200px;
+    position: absolute;
+    right: 0px;
     border-radius: 20px;
+    background: #fff;
+    z-index: 10;
 }
 
 .user-login .title{
@@ -73,8 +77,8 @@ body{
     position: relative;
     height: 400px;
     line-height: 400px;
-    margin: 80px 100px;
-    float: right;
+    margin: 0px 100px;
+    float: left;
     border-radius: 20px;
     text-align: center;
 }
@@ -258,4 +262,12 @@ body{
     z-index: 6;
     line-height: normal;
     top: 30px;
+}
+
+.container{
+    display: block;
+    padding: 50px 200px;
+    height: auto !important;
+    height: 500px;
+    min-height: 500px;
 }
