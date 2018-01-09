@@ -21,6 +21,14 @@ public class LoginController {
     private static final String VIEW_LOGIN = "/login";
     private static final String VIEW_INDEX = "/index";
 
+    /**
+     * 登录操作(表单登录为post请求)
+     *
+     * @param request
+     * @param username
+     * @param password
+     * @return
+     */
     @RequestMapping(value = {"/login"},method = RequestMethod.POST)
     public ModelAndView login(HttpServletRequest request, String username, String password) {
         HttpSession session = request.getSession(false);
@@ -40,10 +48,27 @@ public class LoginController {
         return modelAndView;
     }
 
-    @RequestMapping("/logout")
+    /**
+     * 进入登录页面
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = {"/login","/login.html"},method = RequestMethod.GET)
     public String logOut(HttpServletRequest request) {
-        Subject subject = SecurityUtils.getSubject();
-        subject.logout();
-        return "login";
+        HttpSession session = request.getSession(false);
+        if (session == null){//当取到的session为空,跳转到login视图
+            return VIEW_LOGIN;
+        }else {
+            User user = (User) session.getAttribute("user");
+            if (user.getUsername() == null){//当session中的user为空,跳转到login视图
+                return VIEW_LOGIN;
+            }else if (request.getParameter("logout") != null){//当url为登出时,则清除当前subject的信息,跳转到login视图
+                Subject subject = SecurityUtils.getSubject();
+                subject.logout();
+                return VIEW_LOGIN;
+            }
+        }
+        return "redirect:"+VIEW_INDEX+".html";
     }
 }

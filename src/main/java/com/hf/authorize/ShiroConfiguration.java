@@ -32,7 +32,7 @@ public class ShiroConfiguration {
         //anon表示可以匿名访问,authc表示需要认证才能访问
         filterChainDefinitionMap.put("/login.html", "anon");
         filterChainDefinitionMap.put("/login", "anon");
-        filterChainDefinitionMap.put("/logout","anon");
+        filterChainDefinitionMap.put("/login?logout","anon");
         filterChainDefinitionMap.put("/index.html","anon");
         filterChainDefinitionMap.put("/js/**","anon");
         filterChainDefinitionMap.put("/images/**","anon");
