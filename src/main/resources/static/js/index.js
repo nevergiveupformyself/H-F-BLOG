@@ -1,3 +1,6 @@
+/**
+* home.js
+* */
 var initImgCover = function(){
     var directionObj = {
         "top-left":"rotate(-90deg)",
@@ -126,5 +129,16 @@ var initImgCover = function(){
                 }
             })
         }
+    })
+}
+
+
+/**
+ * index.js
+ */
+var initNavItemClick = function(){
+    $(".hf-nav li.hf-item").click(function(){
+        var left = this.offsetLeft;
+        $('.hf-nav span.li-bottom').animate({left: left + 'px'}, "fast")
     })
 }

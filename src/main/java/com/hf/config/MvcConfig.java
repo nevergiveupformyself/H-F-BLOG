@@ -54,6 +54,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/");
         registry.addResourceHandler("/src/**").addResourceLocations("classpath:/static/src/");
         registry.addResourceHandler("/bootstrap-3.3.7/**").addResourceLocations("classpath:/static/bootstrap-3.3.7/");
+        registry.addResourceHandler("/font-awesome-4.6.3/**").addResourceLocations("classpath:/static/font-awesome-4.6.3/");
 
         super.addResourceHandlers(registry);
     }

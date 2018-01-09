@@ -38,6 +38,8 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/images/**","anon");
         filterChainDefinitionMap.put("/css/**","anon");
         filterChainDefinitionMap.put("/bootstrap-3.3.7/**","anon");
+        filterChainDefinitionMap.put("/font-awesome-4.6.3/**","anon");
+
         filterChainDefinitionMap.put("/*", "authc");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/*.*", "authc");
