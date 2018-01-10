@@ -142,3 +142,30 @@ var initNavItemClick = function(){
         $('.hf-nav span.li-bottom').animate({left: left + 'px'}, "fast")
     })
 }
+
+
+/**
+ * publish.html
+ */
+
+var initAceEdit = function(){
+    var aceEdit = ace.edit('editor')
+    aceEdit.setTheme('ace/theme/chrome');
+    aceEdit.getSession().setMode('ace/mode/markdown');
+    aceEdit.getSession().setUseWrapMode(false);
+    aceEdit.renderer.setShowPrintMargin(false);
+
+    aceEdit.setReadOnly(false);
+    aceEdit.setOptions({
+        fontSize:'16px',
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+        maxLines: Infinity
+    });
+    //设置高度
+    aceEdit.container.style.lineHeight = 1.5
+    aceEdit.renderer.updateFontSize();
+    return aceEdit;
+}
+

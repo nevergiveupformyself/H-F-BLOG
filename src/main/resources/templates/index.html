@@ -6,12 +6,15 @@
    <header>
        <div class="hf-header">
            <div th:replace="common/header :: header"></div>
-           <ul class="hf-nav">
+           <ul class="hf-nav hf-tab">
                <li class="hf-item active" style="width: 100px">
                    <a href="#home" data-toggle="tab">首页</a>
                </li>
                <li class="hf-item">
                    <a href="#publish" data-toggle="tab">发布</a>
+               </li>
+               <li class="hf-item">
+                   <a href="#about" data-toggle="tab">关于</a>
                </li>
                <span class="li-bottom"></span>
            </ul>
@@ -23,10 +26,10 @@
                    </a>
                    <ul class="dropdown-menu" role="menu">
                        <li>
-                           <a class="bottom-spread-in-out" href="javascript:void(0)">1212</a>
+                           <a class="bottom-spread-in-out" th:href="@{/login?logout}">注销</a>
                        </li>
                        <li>
-                           <a class="bottom-spread-in-out" th:href="@{/login?logout}">注销</a>
+                           <a class="bottom-spread-in-out" th:href="@{/login?changeUser}">切换账号</a>
                        </li>
                    </ul>
 
@@ -43,7 +46,12 @@
            <div role="tabpanel" class="tab-pane active"  id="home">
                <div th:replace="home:: home"></div>
            </div>
-           <div role="tabpanel" class="tab-pane" id="publish">...</div>
+           <div role="tabpanel" class="tab-pane" id="publish">
+               <div th:replace="publish:: publish"></div>
+           </div>
+           <div role="tabpanel" class="tab-pane" id="about">
+               <div th:replace="about:: about"></div>
+           </div>
        </div>
    </div>
    <script type="text/javascript" th:inline="javascript">

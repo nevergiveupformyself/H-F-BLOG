@@ -57,18 +57,21 @@ public class LoginController {
     @RequestMapping(value = {"/login","/login.html"},method = RequestMethod.GET)
     public String logOut(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
-        if (session == null){//当取到的session为空,跳转到login视图
-            return VIEW_LOGIN;
-        }else {
+        if(session != null){
             User user = (User) session.getAttribute("user");
             if (user.getUsername() == null){//当session中的user为空,跳转到login视图
-                return VIEW_LOGIN;
+                return  VIEW_LOGIN;
             }else if (request.getParameter("logout") != null){//当url为登出时,则清除当前subject的信息,跳转到login视图
+                Subject subject = SecurityUtils.getSubject();
+                subject.logout();
+                return "redirect:"+VIEW_INDEX+".html";
+            }else if(request.getParameter("changeUser") != null){
                 Subject subject = SecurityUtils.getSubject();
                 subject.logout();
                 return VIEW_LOGIN;
             }
+            return "redirect:"+VIEW_INDEX+".html";
         }
-        return "redirect:"+VIEW_INDEX+".html";
+        return VIEW_LOGIN; //如果session为null，返回login
     }
 }

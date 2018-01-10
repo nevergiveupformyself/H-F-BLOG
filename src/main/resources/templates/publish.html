@@ -1,7 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="publish">
+<div th:fragment="preview" id="preview" class="preview"></div>
+<div th:fragment="editor" id="editor" class="editor"></div>
+<div th:fragment="toolbar" id="toolbar">
+    <span class="editor-icon-group">
+        <span class="editor-icon-title"><i class="fa fa-header" aria-hidden="true"></i></span>
+        <span class="editor-icon">H1</span>
+        <span class="editor-icon">H2</span>
+        <span class="editor-icon">H3</span>
+        <span class="editor-icon">H4</span>
+    </span>
+    <span class="editor-icon-group">
+         <!--粗体-->
+         <span class="editor-icon"><i class="fa fa-bold" aria-hidden="true"></i></span>
+        <!--斜体-->
+         <span class="editor-icon"><i class="fa fa-italic" aria-hidden="true"></i></span>
+        <!--删除线-->
+         <span class="editor-icon"><i class="fa fa-strikethrough" aria-hidden="true"></i></span>
+    </span>
 
+
+    <span class="editor-icon-group">
+
+          <!--引用-->
+          <span class="editor-icon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+
+         <span class="editor-icon"><i class="fa fa-code" aria-hidden="true"></i></span>
+         <!--图片-->
+         <span class="editor-icon"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+         <!--链接-->
+         <span class="editor-icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+
+    </span>
+    <span class="editor-icon-group">
+         <!--列表-->
+         <span class="editor-icon"><i class="fa fa-list-ol" aria-hidden="true"></i></span>
+        <span class="editor-icon"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
+
+        <!--分隔符-->
+        <span class="editor-icon"><i class="fa fa-minus" aria-hidden="true"></i></span>
+
+    </span>
+    <span class="editor-icon-group">
+         <!--复制-->
+         <span class="editor-icon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
+        <!--剪切-->
+         <span class="editor-icon"><i class="fa fa-scissors" aria-hidden="true"></i></span>
+        <!--粘贴-->
+         <span class="editor-icon"><i class="fa fa-clipboard" aria-hidden="true"></i></span>
+    </span>
+    <span class="editor-icon-group">
+        <!--保存-->
+        <span class="editor-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+        <!--发布-->
+        <span class="editor-icon"><i class="fa fa-share" aria-hidden="true"></i></span>
+    </span>
+</div>
+<div th:fragment="publish" class="hf-content">
+    <ul id="publishTab" class="hf-tab">
+        <li class="hf-item active">
+            <a href="#writeTab" class="bottom-spread-in-out" data-toggle="tab">编写</a>
+        </li>
+        <li class="hf-item" id="previewBtn">
+            <a  href="#previewTab" class="bottom-spread-in-out" data-toggle="tab">预览</a>
+        </li>
+    </ul>
+    <div id="editor-wrapper">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active"  id="writeTab">
+                <div th:replace="publish :: toolbar"></div>
+                <div th:replace="publish :: editor"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane"  id="previewTab">
+                <div th:replace="publish :: preview"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" th:inline="javascript">
+       var aceEdit =  initAceEdit();
+       $('#previewBtn').on("click",function(){
+           $("#preview").html(marked(aceEdit.getValue()));
+       })
+    </script>
 </div>
 </html>
