@@ -77,12 +77,5 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" th:inline="javascript">
-       var aceEdit =  initAceEdit();
-       $('#previewBtn').on("click",function(){
-           $("#preview").html(marked(aceEdit.getValue()));
-       })
-    </script>
 </div>
 </html>

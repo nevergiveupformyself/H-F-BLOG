@@ -149,23 +149,52 @@ var initNavItemClick = function(){
  */
 
 var initAceEdit = function(){
+    ace.require("ace/ext/language_tools");
     var aceEdit = ace.edit('editor')
     aceEdit.setTheme('ace/theme/chrome');
     aceEdit.getSession().setMode('ace/mode/markdown');
     aceEdit.getSession().setUseWrapMode(false);
     aceEdit.renderer.setShowPrintMargin(false);
-
+    aceEdit.$blockScrolling = Infinity;
     aceEdit.setReadOnly(false);
     aceEdit.setOptions({
         fontSize:'16px',
         enableBasicAutocompletion: true,
         enableSnippets: true,
-        enableLiveAutocompletion: true,
-        maxLines: Infinity
+        enableLiveAutocompletion: false
     });
     //设置高度
     aceEdit.container.style.lineHeight = 1.5
     aceEdit.renderer.updateFontSize();
+
+    var avaHeight = $(window).height() - 170;
+   // $(".custom-scroller").outerHeight(avaHeight);
+    $('#stepEditor').height(avaHeight);
+    $(window).resize(function () {
+        var avaHeight = $(window).height() - 170;
+       // $(".custom-scroller").outerHeight(avaHeight);
+        $('#stepEditor').height(avaHeight);
+    });
+
     return aceEdit;
 }
 
+var initMarked = function(){
+    var aceEdit =  initAceEdit();
+    marked.setOptions({
+        renderer: new marked.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false,
+        highlight: function (code) {
+            return hljs.highlightAuto(code).value;
+        }
+    });
+    $('#previewBtn').on("click",function(){
+        $("#preview").html(marked(aceEdit.getValue()));
+    })
+}

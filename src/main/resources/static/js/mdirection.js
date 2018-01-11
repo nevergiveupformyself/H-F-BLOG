@@ -1,7 +1,6 @@
 if (typeof jQuery === 'undefined') {
     throw new Error('mDirection JavaScript requires jQuery')
 }
-
 +function ($) {
     'use strict';
 
