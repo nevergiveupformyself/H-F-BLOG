@@ -9,5 +9,6 @@
     <include file="classpath:db/liquibase/sqlFile/demo.sql" relativeToChangelogFile="false"/>
     <!--shior权限控制相关表-->
     <include file="classpath:db/liquibase/sqlFile/shiro.sql" relativeToChangelogFile="false"/>
-
+    <!--article表-->
+    <include file="classpath:db/liquibase/sqlFile/article.sql" relativeToChangelogFile="false"/>
 </databaseChangeLog>
