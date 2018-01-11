@@ -139,7 +139,11 @@ var initImgCover = function(){
 var initNavItemClick = function(){
     $(".hf-nav li.hf-item").click(function(){
         var left = this.offsetLeft;
-        $('.hf-nav span.li-bottom').animate({left: left + 'px'}, "fast")
+        var width = this.offsetWidth;
+        $('.hf-nav span.li-bottom').animate({
+            left: left + 'px',
+            width:width+'px'
+        }, "fast")
     })
 }
 
@@ -198,3 +202,8 @@ var initMarked = function(){
         $("#preview").html(marked(aceEdit.getValue()));
     })
 }
+
+$(".hf-select >.hf-menu").hide();
+$(".hf-select >.hf-menu a").click(function(){
+    $(".hf-select >.hf-menu").show();
+})

@@ -57,6 +57,48 @@
         <span class="editor-icon"><i class="fa fa-share" aria-hidden="true"></i></span>
     </span>
 </div>
+<div th:fragment="articleTitle" id="articleTitle">
+  <!--  <span class="hf-label">标题</span>-->
+    <input type="text" class="hf-input" placeholder="请输入文章标题"/>
+</div>
+<div th:fragment="articleTag" id="articleTag">
+    <!--combobox-->
+    <div class="hf-select">
+        <input type="text" class="hf-input" placeholder="请选择标签"/>
+        <ul class="hf-menu">
+            <li class="hf-item">
+                <span class="tags-title">后端</span>
+                <div class="tags">
+                    <a class="tag f-color" href="javascript:void(0)">java</a>
+                    <a class="tag f-color" href="javascript:void(0)">mysql</a>
+                </div>
+            </li>
+            <li class="hf-item">
+            <span class="tags-title">前端</span>
+            <div class="tags">
+                <a class="tag h-color" href="javascript:void(0)">html</a>
+                <a class="tag h-color" href="javascript:void(0)">javascript</a>
+                <a class="tag h-color" href="javascript:void(0)">jquery</a>
+                <a class="tag h-color" href="javascript:void(0)">css</a>
+                <a class="tag h-color" href="javascript:void(0)">nodejs</a>
+                <a class="tag h-color" href="javascript:void(0)">react</a>
+                <a class="tag h-color" href="javascript:void(0)">vue</a>
+                <a class="tag h-color" href="javascript:void(0)">angularjs</a>
+            </div>
+            </li>
+            <li class="hf-item">
+                <span class="tags-title">其他</span>
+                <div class="tags">
+                    <a class="tag h-color" href="javascript:void(0)">kendoui</a>
+                    <a class="tag h-color" href="javascript:void(0)">微信小程序</a>
+                    <a class="tag h-color" href="javascript:void(0)">jquery</a>
+                    <a class="tag h-color" href="javascript:void(0)">framemaker</a>
+                    <a class="tag h-color" href="javascript:void(0)">thyemeleaf</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 <div th:fragment="publish" class="hf-content">
     <ul id="publishTab" class="hf-tab">
         <li class="hf-item active">
@@ -69,8 +111,12 @@
     <div id="editor-wrapper">
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active"  id="writeTab">
-                <div th:replace="publish :: toolbar"></div>
-                <div th:replace="publish :: editor"></div>
+                <div th:replace="publish :: articleTitle"></div>
+                <div th:replace="publish :: articleTag"></div>
+                <div style="border: 1px solid #ececec">
+                    <div th:replace="publish :: toolbar"></div>
+                    <div th:replace="publish :: editor"></div>
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane"  id="previewTab">
                 <div th:replace="publish :: preview"></div>
