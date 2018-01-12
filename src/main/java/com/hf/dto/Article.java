@@ -1,9 +1,10 @@
 package com.hf.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-public class Article {
+public class Article implements Serializable{
     @Id
     @Column(name = "article_id")
     private Long articleId;
