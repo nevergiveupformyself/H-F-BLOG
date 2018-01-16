@@ -63,41 +63,29 @@
 </div>
 <div th:fragment="articleTag" id="articleTag">
     <!--combobox-->
-    <div class="hf-select">
-        <input type="text" class="hf-input" placeholder="请选择标签"/>
-        <ul class="hf-menu">
-            <li class="hf-item">
-                <span class="tags-title">后端</span>
-                <div class="tags">
-                    <a class="tag f-color" href="javascript:void(0)">java</a>
-                    <a class="tag f-color" href="javascript:void(0)">mysql</a>
-                </div>
-            </li>
-            <li class="hf-item">
-            <span class="tags-title">前端</span>
-            <div class="tags">
-                <a class="tag h-color" href="javascript:void(0)">html</a>
-                <a class="tag h-color" href="javascript:void(0)">javascript</a>
-                <a class="tag h-color" href="javascript:void(0)">jquery</a>
-                <a class="tag h-color" href="javascript:void(0)">css</a>
-                <a class="tag h-color" href="javascript:void(0)">nodejs</a>
-                <a class="tag h-color" href="javascript:void(0)">react</a>
-                <a class="tag h-color" href="javascript:void(0)">vue</a>
-                <a class="tag h-color" href="javascript:void(0)">angularjs</a>
-            </div>
-            </li>
-            <li class="hf-item">
-                <span class="tags-title">其他</span>
-                <div class="tags">
-                    <a class="tag h-color" href="javascript:void(0)">kendoui</a>
-                    <a class="tag h-color" href="javascript:void(0)">微信小程序</a>
-                    <a class="tag h-color" href="javascript:void(0)">jquery</a>
-                    <a class="tag h-color" href="javascript:void(0)">framemaker</a>
-                    <a class="tag h-color" href="javascript:void(0)">thyemeleaf</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <!--class="" multiple="multiple" size="4"-->
+    <select class="hf-select">
+        <optgroup class="hf-group" label="后端">
+            <option class="hf-tag f-color">java</option>
+            <option class="hf-tag f-color">mysql</option>
+        </optgroup>
+        <optgroup class="hf-group" label="前端">
+            <option class="hf-tag h-color">js</option>
+            <option class="hf-tag h-color">jquery</option>
+            <option class="hf-tag h-color">css</option>
+            <option class="hf-tag h-color">nodejs</option>
+            <option class="hf-tag h-color">react</option>
+            <option class="hf-tag h-color">vue</option>
+            <option class="hf-tag h-color">angularjs</option>
+        </optgroup>
+        <optgroup  class="hf-group" label="其他">
+            <option class="hf-tag f-color">kendoui</option>
+            <option class="hf-tag f-color">微信小程序</option>
+            <option class="hf-tag f-color">jquery</option>
+            <option class="hf-tag f-color">framemaker</option>
+            <option class="hf-tag f-color">thyemeleaf</option>
+        </optgroup>
+    </select>
 </div>
 <div th:fragment="publish" class="hf-content">
     <ul id="publishTab" class="hf-tab">

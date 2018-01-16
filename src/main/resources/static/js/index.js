@@ -201,9 +201,5 @@ var initMarked = function(){
     $('#previewBtn').on("click",function(){
         $("#preview").html(marked(aceEdit.getValue()));
     })
-}
+};
 
-$(".hf-select >.hf-menu").hide();
-$(".hf-select >.hf-menu a").click(function(){
-    $(".hf-select >.hf-menu").show();
-})
