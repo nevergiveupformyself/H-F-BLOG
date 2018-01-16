@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by fjm on 2017/12/23.
  */
-public abstract class BaseServiceImpl<T> implements IBaseService<T>, ProxySelf<T> {
+public abstract class BaseServiceImpl<T> implements IBaseService<T> {
 
     @Autowired
     private MyMapper<T> baseMapper;

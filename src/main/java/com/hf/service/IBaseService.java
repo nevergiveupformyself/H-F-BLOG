@@ -1,11 +1,13 @@
 package com.hf.service;
 
+import com.hf.util.ProxySelf;
+
 import java.util.List;
 
 /**
  * Created by fjm on 2017/12/23.
  */
-public interface IBaseService<T> {
+public interface IBaseService<T> extends ProxySelf<IBaseService<T>>{
 
     List<T> select(T condition, int pageNum, int pageSize);
 

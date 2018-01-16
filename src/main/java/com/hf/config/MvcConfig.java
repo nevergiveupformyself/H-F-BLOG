@@ -1,6 +1,6 @@
 package com.hf.config;
 
-import com.hf.interceptors.RequestInterceptors;
+import com.hf.interceptors.UserDetailInterceptor;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -63,19 +63,20 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(requestInterceptors()).addPathPatterns("/**");
+        registry.addInterceptor(userDetailInterceptor()).addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 
     @Bean
-    public RequestInterceptors requestInterceptors(){
-        return new RequestInterceptors();
+    public UserDetailInterceptor userDetailInterceptor(){
+        return new UserDetailInterceptor();
     }
 
     @Bean
     public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
         ServletRegistrationBean registration = new ServletRegistrationBean(
                 dispatcherServlet);
+        //dispatcherServlet无法加载到请求url的资源时,抛出NoHandlerFound异常
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
         return registration;
     }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by fjm on 2018/1/5.
  */
-public class RequestInterceptors implements HandlerInterceptor{
+public class UserDetailInterceptor implements HandlerInterceptor{
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
