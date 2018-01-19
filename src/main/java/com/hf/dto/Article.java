@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 public class Article implements Serializable{
     @Id
+    @GeneratedValue
     @Column(name = "article_id")
     private Long articleId;
 
