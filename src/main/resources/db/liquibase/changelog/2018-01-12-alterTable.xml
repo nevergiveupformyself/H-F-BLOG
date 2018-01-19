@@ -15,4 +15,8 @@
         </addColumn>
 
     </changeSet>
+
+    <changeSet id="20180119" author="FJM">
+        <addAutoIncrement tableName="article" columnName="article_id" columnDataType="bigint" />
+    </changeSet>
 </databaseChangeLog>
