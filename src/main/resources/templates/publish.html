@@ -6,53 +6,41 @@
 <div th:fragment="toolbar" id="toolbar">
     <span class="editor-icon-group">
         <span class="editor-icon-title"><i class="fa fa-header" aria-hidden="true"></i></span>
-        <span class="editor-icon">H1</span>
-        <span class="editor-icon">H2</span>
-        <span class="editor-icon">H3</span>
-        <span class="editor-icon">H4</span>
+        <span class="editor-icon" name = "h1">H1</span>
+        <span class="editor-icon" name = "h2">H2</span>
+        <span class="editor-icon" name = "h3">H3</span>
+        <span class="editor-icon" name = "h4">H4</span>
     </span>
     <span class="editor-icon-group">
          <!--粗体-->
-         <span class="editor-icon"><i class="fa fa-bold" aria-hidden="true"></i></span>
+         <span class="editor-icon" name="bold"><i class="fa fa-bold" aria-hidden="true"></i></span>
         <!--斜体-->
-         <span class="editor-icon"><i class="fa fa-italic" aria-hidden="true"></i></span>
+         <span class="editor-icon" name="italic"><i class="fa fa-italic" aria-hidden="true"></i></span>
         <!--删除线-->
-         <span class="editor-icon"><i class="fa fa-strikethrough" aria-hidden="true"></i></span>
+         <span class="editor-icon" name="strikethrough"><i class="fa fa-strikethrough" aria-hidden="true"></i></span>
     </span>
 
 
     <span class="editor-icon-group">
 
           <!--引用-->
-          <span class="editor-icon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+          <span class="editor-icon" name="quote-right"><i class="fa fa-fw fa-quote-right" aria-hidden="true"></i></span>
 
-         <span class="editor-icon"><i class="fa fa-code" aria-hidden="true"></i></span>
-         <!--图片-->
-         <span class="editor-icon"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
-         <!--链接-->
-         <span class="editor-icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+         <span class="editor-icon" name="code"><i class="fa fa-code" aria-hidden="true"></i></span>
 
     </span>
     <span class="editor-icon-group">
          <!--列表-->
-         <span class="editor-icon"><i class="fa fa-list-ol" aria-hidden="true"></i></span>
-        <span class="editor-icon"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
+         <span class="editor-icon" name="list-ol"><i class="fa fa-list-ol" aria-hidden="true"></i></span>
+        <span class="editor-icon" name="list-ul"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
 
         <!--分隔符-->
-        <span class="editor-icon"><i class="fa fa-minus" aria-hidden="true"></i></span>
+        <span class="editor-icon" name="separate"><i class="fa fa-minus" aria-hidden="true"></i></span>
 
-    </span>
-    <span class="editor-icon-group">
-         <!--复制-->
-         <span class="editor-icon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-        <!--剪切-->
-         <span class="editor-icon"><i class="fa fa-scissors" aria-hidden="true"></i></span>
-        <!--粘贴-->
-         <span class="editor-icon"><i class="fa fa-clipboard" aria-hidden="true"></i></span>
     </span>
     <span class="editor-icon-group">
         <!--保存-->
-        <span class="editor-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+        <span class="editor-icon" onclick="publishArticle();"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
         <!--发布-->
         <span class="editor-icon"><i class="fa fa-share" aria-hidden="true"></i></span>
     </span>
@@ -112,4 +100,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" th:inline="javascript">
+
+</script>
 </html>

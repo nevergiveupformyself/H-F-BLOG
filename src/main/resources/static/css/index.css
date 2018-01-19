@@ -577,3 +577,20 @@ input
 .hf-select{
     width: 100%;
 }
+
+/**
+editor
+ */
+#editor .ace_layer.ace_gutter-layer{
+    width: 30px !important;
+}
+
+#editor .ace_layer.ace_gutter-layer .ace_gutter-cell{
+    padding-left: 0px !important;
+    padding-right: 5px !important;
+}
+
+#editor .ace_layer.ace_gutter-layer .ace_fold-widget{
+    margin: 0px -8px 0 1px !important;
+    width: 8px !important;
+}

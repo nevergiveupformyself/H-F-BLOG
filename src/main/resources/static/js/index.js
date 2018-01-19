@@ -157,7 +157,7 @@ var initAceEdit = function(){
     var aceEdit = ace.edit('editor')
     aceEdit.setTheme('ace/theme/chrome');
     aceEdit.getSession().setMode('ace/mode/markdown');
-    aceEdit.getSession().setUseWrapMode(false);
+    aceEdit.getSession().setUseWrapMode(true);
     aceEdit.renderer.setShowPrintMargin(false);
     aceEdit.$blockScrolling = Infinity;
     aceEdit.setReadOnly(false);
@@ -181,10 +181,85 @@ var initAceEdit = function(){
     });
 
     return aceEdit;
-}
+};
 
-var initMarked = function(){
-    var aceEdit =  initAceEdit();
+
+var sprintf = function (str) {
+    var args = arguments,
+        flag = true,
+        i = 1;
+
+    str = str.replace(/%s/g, function () {
+        var arg = args[i++];
+
+        if (typeof arg === 'undefined') {
+            flag = false;
+            return '';
+        }
+        return arg;
+    });
+    return flag ? str : '';
+};
+
+
+function handleMarkDownIcon(editor,syntaxObj){
+
+    var syntax = syntaxObj.syntax ||"",
+        prevLine = syntaxObj.prevLine,
+        nextLine = syntaxObj.nextLine,
+        type = syntaxObj.type;
+    var value = editor.session.getTextRange(editor.getSelectionRange()),
+        range = editor.getSelectionRange(),
+        start = range.start,
+        end = range.end,
+        length = editor.session.getLine(end.row).length,
+        lines = value.split("\n"),syntaxLines=[];
+
+
+    if(syntax instanceof Array){
+        if(lines.length<=1){
+            syntax = syntax[0];
+        }else{
+            syntax = syntax[1];
+            if(start.column){
+                syntax = "\n"+ syntax ;
+            }
+        }
+    }
+
+   if(prevLine){
+
+
+       $.each(lines,function(i,value){
+           if(type == "number"){
+               syntax = i+1+". %s";
+           }
+           syntaxLines.push(sprintf(syntax,value)+ (nextLine?"\n":""));
+       });
+       syntax = syntaxLines.join("\n");
+
+        if(start.column){
+            syntax = "\n"+ syntax ;
+        }
+        if(end.column != length && value){
+            syntax = syntax + "\n";
+        }
+
+    }else if(!value){
+        range.end.column = length;
+        value = editor.session.getTextRange(range);
+        syntax = sprintf(syntax,value);
+    }else{
+        syntax = sprintf(syntax,value);
+    }
+
+    editor.insert(syntax);
+    editor.navigateLineEnd();
+    editor.focus();
+}
+var aceEdit = null;
+var initPublish = function(){
+    aceEdit = initAceEdit();
     marked.setOptions({
         renderer: new marked.Renderer(),
         gfm: true,
@@ -200,6 +275,97 @@ var initMarked = function(){
     });
     $('#previewBtn').on("click",function(){
         $("#preview").html(marked(aceEdit.getValue()));
-    })
-};
+        editor.focus();
+    });
 
+    $(".hf-select").hfSelect({
+        multiple:true,
+        size:4,
+        inputCss:{
+            width:"100%"
+        },
+        autoWidth:true
+    })
+
+    var markdownSyntaxObj = {
+        h1:{
+            syntax:  "# %s",
+            prevLine:true
+        },
+        h2:{
+            syntax: "## %s",
+            prevLine:true
+        },
+        h3:{
+            syntax:"### %s",
+            prevLine:true
+        },
+        h4:{
+            syntax:"#### %s",
+            prevLine:true
+        },
+        "list-ol":{
+            type:"number",
+            prevLine:true
+        },
+        "list-ul":{
+            syntax:"* %s",
+            prevLine:true
+        },
+        separate:{
+            syntax:"\n---\n%s",
+            prevLine:true
+        },
+        "quote-right":{
+            syntax:"> %s",
+            prevLine:true,
+            nextLine:true
+        },
+        bold:{
+            syntax:"**%s**",
+        },
+        italic:{
+            syntax:"*%s*",
+        },
+        strikethrough:{
+            syntax:"~~%s~~",
+        },
+        code:{
+            syntax:[
+                "`%s`",
+                "```\n%s\n```\n"
+            ]
+        },
+
+    };
+
+    $("#toolbar .editor-icon").on("click",function(){
+        var name = $(this).attr("name"),
+            markdownSyntax = markdownSyntaxObj[name];
+        if(markdownSyntax){
+            handleMarkDownIcon(aceEdit,markdownSyntax);
+        }
+    })
+
+
+};
+var publishArticle = function (){
+    var title = $("#articleTitle>input").val(),
+        tags = [],
+        value = aceEdit.getValue();
+
+    $("#articleTag .hf-select span.hf-choices>span.hf-choice").each(function(i,v){
+        tags.push($(this).val());
+    });
+    $.ajax({
+        type:"POST",
+        data:{
+            articleName:title,
+            articleContent:value
+        },
+        url:"/article/publish",
+        success:function(){
+            alert("保存成功")
+        }
+    })
+}
