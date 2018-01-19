@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 public class Article implements Serializable{
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "article_id")
     private Long articleId;
 
