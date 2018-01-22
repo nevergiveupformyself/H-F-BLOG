@@ -61,7 +61,10 @@
         autoWidth:false,
         isOpen:false,
         placeholder:'',
-        animate: 'slide',
+        animation: {
+            animate:"slide",
+            speed:"fast"
+        },
         inputCss:{},
         choiceTemplate : $('<span class="hf-choice"><i class="hf-close" aria-hidden="true"></i></span>')
     };
@@ -183,10 +186,11 @@
 
         },
         open:function(){
+            var speed = this.options.animation.speed;
             var open = this.options.open;
             this.options.isOpen = true;
             this.$wrapper.addClass('open');
-            this.$drop[this.animateMethod('show')]();
+            this.$drop[this.animateMethod('show')](speed);
 
             if(!this.options.autoWidth){
                 var width = this.$input.width();
@@ -205,10 +209,11 @@
             open && open();
         },
         close:function(){
+            var speed = this.options.animation.speed;
             var close = this.options.close;
             this.options.isOpen = false;
             this.$wrapper.removeClass('open');
-            this.$drop[this.animateMethod('hide')]('fast');
+            this.$drop[this.animateMethod('hide')](speed);
             if(this.options.container){
                 this.$parent.append(this.$drop);
                 this.$drop.css({
@@ -229,7 +234,7 @@
                     slide: 'slideUp'
                 }
             };
-            return methods[method][this.options.animate] || method;
+            return methods[method][this.options.animation.animate] || method;
         },
         enable:function(){
 

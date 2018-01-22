@@ -26,7 +26,15 @@ ul.hf-reversal{
     margin: 20px;
     cursor: pointer;
 }
-
+.hf-reversal  li.hf-center{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px;
+}
 
 .hf-reversal .hf-item img{
     position: relative;
@@ -134,6 +142,7 @@ publish.css
     height: 40px;
     line-height: 40px;
 }
+
 
 #editor,#preview{
     height: 400px;
@@ -593,4 +602,75 @@ editor
 #editor .ace_layer.ace_gutter-layer .ace_fold-widget{
     margin: 0px -8px 0 1px !important;
     width: 8px !important;
+}
+
+
+/**
+search
+ */
+#search .hf-search{
+    margin: 0px auto;
+}
+#search .hf-search >.hf-input{
+    width: 500px;
+    padding-right: 30px;
+}
+
+#search .search-btn{
+    position: relative;
+    right: 30px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/search.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    vertical-align: middle;
+    opacity: 0.5;
+    cursor: pointer;
+}
+#search .search-btn:hover{
+    opacity: 1;
+}
+
+
+/**
+home
+ */
+
+#home .homebg{
+    border-radius: 5px;
+    height: 400px;
+    width: 100%;
+}
+
+#home .container{
+    margin-top: 30px;
+    padding: 0px;
+}
+#home .container{
+    text-align: left;
+    min-width: 1000px;
+}
+
+#homeTab{
+    display: inline-block;
+    margin: 0px;
+    width: 200px;
+    text-align: center;
+    padding: 0 30px;
+}
+
+#homeTab li.hf-item{
+    display: block;
+}
+#homeTab li.hf-item>a{
+    padding: 0px 30px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#home .tab-content{
+    display: inline-block;
+    vertical-align: top;
 }
