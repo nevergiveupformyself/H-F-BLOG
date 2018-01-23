@@ -612,8 +612,9 @@ search
     margin: 0px auto;
 }
 #search .hf-search >.hf-input{
-    width: 500px;
+    width: 540px;
     padding-right: 30px;
+    margin-left: 20px;
 }
 
 #search .search-btn{

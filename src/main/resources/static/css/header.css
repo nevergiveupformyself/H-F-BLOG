@@ -8,6 +8,12 @@ header{
     height: 85px;
     z-index: 1;
 }
+
+.logo-wrapper {
+    display: inline-block;
+    width: 240px;
+    overflow: hidden;
+}
 .hf-header
  {
     display: block;
