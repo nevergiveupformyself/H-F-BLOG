@@ -126,6 +126,12 @@
 			<artifactId>flexmark-ext-tables</artifactId>
 			<version>0.26.4</version>
 		</dependency>
+		<!--与thymeleaf的LEGACYHTML5搭配,否则会报错-->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
 
 
 		<!--热部署插件-->
