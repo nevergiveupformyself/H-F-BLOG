@@ -1,5 +1,5 @@
 /**
-* home.js
+* search.js
 * */
 var initImgCover = function(){
     var directionObj = {
@@ -130,9 +130,16 @@ var initImgCover = function(){
             })
         }
     })
+
+
+
 }
 
-
+function showEffect(name){
+    //showCss
+    $("#search .active").removeClass("active").hide();
+    $("#search #"+name).addClass("active").show();
+}
 /**
  * index.js
  */
@@ -369,4 +376,7 @@ var publishArticle = function (){
             alert("保存成功")
         }
     })
-}
+};
+$(".return-top").on("click",function(){
+    $("body,html").animate({scrollTop:0});
+});

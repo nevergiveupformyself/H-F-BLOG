@@ -2,15 +2,16 @@
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
 <div class="hf-content" th:fragment="search" >
-    <div class="hf-search">
+    <div id="showSearch" class="active">
+        <div class="hf-search">
         <input class="hf-input" placeholder="请输入文章关键词"/>
         <span class="search-btn"></span>
     </div>
-    <ul class="hf-reversal">
-        <li class="hf-item">
+        <ul class="hf-reversal">
+        <li class="hf-item" onclick="showEffect('showCss')">
             <img th:src="@{images/reversal/1.png}"/>
             <div class="hf-cover h-color">
-
+                Css效果展示
             </div>
         </li>
         <li class="hf-item">
@@ -60,5 +61,8 @@
             </div>
         </li>
     </ul>
+    </div>
+    <div id="showCss" style="display: none" th:include="showEffect :: showCss">
+    </div>
 </div>
 </html>

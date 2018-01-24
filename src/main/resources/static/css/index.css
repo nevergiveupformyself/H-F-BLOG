@@ -48,6 +48,8 @@ ul.hf-reversal{
 .hf-reversal .hf-item .hf-cover{
     height: 150px;
     width: 150px;
+    line-height: 150px;
+    font-size: 21px;
     position: absolute;
     left: 0;
     top: 0;
@@ -668,5 +670,50 @@ search
 }
 #search .search-btn:hover{
     opacity: 1;
+}
+
+/**
+ showCss
+*/
+.hf-text{
+    font-size: 16px;
+    color: #8e8e8e;
+}
+#search .levels{
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(0, 146, 192, 0.7);
+}
+#search .levels:hover{
+    text-decoration: underline;
+}
+
+
+
+/**
+global
+ */
+.return-top{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: rgba(0, 146, 192, 0.5);
+    border-radius: 25px;
+    position: fixed;
+    bottom: 50px;
+    box-shadow: 0px 3px 10px #b7b6b6;
+    color: white;
+    cursor: pointer;
+}
+.return-top:hover{
+    background: rgba(0, 146, 192, 0.7);
+}
+.return-top>span{
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
+    display: block;
+    margin: 5px auto;
 }
 
