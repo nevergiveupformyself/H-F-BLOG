@@ -1,4 +1,13 @@
-header{
+
+.logo-wrapper {
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+
+.hf-header
+ {
     top: 0px;
     position: fixed;
     width: 100%;
@@ -6,21 +15,7 @@ header{
     box-shadow: 3px 3px 8px #ececec;
     background: #fff;
     height: 85px;
-    z-index: 1;
-}
-
-.logo-wrapper {
-    display: inline-block;
-    width: 240px;
-    overflow: hidden;
-}
-.hf-header
- {
-    display: block;
-    max-width: 80%;
-    min-width: 710px;
-    margin: 0px auto;
-    position: relative;
+    z-index: 2;
 }
 .hf-logo{
     display: inline-block;

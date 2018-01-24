@@ -144,6 +144,7 @@ var initNavItemClick = function(){
             left: left + 'px',
             width:width+'px'
         }, "fast")
+
     })
 }
 

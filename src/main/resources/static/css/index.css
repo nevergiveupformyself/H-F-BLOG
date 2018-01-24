@@ -117,32 +117,6 @@ ul.hf-reversal{
 }
 
 
-/**
-publish.css
- */
-
-
-#editor-wrapper {
-    overflow: auto;
-    position: relative;
-    margin: 0;
-    padding: 0px 10px;
-}
-
-#publishTab{
-    float: left;
-    margin-right: 5px;
-}
-
-#publishTab li.hf-item{
-    display: block;
-}
-#publishTab li.hf-item>a{
-    padding: 0px 30px;
-    height: 40px;
-    line-height: 40px;
-}
-
 
 #editor,#preview{
     height: 400px;
@@ -192,10 +166,7 @@ publish.css
 }
 
 .hf-content{
-    margin: 30px auto;
-    width: 80%;
     display: block;
-    min-width: 850px;
 }
 
 
@@ -206,15 +177,15 @@ publish.css
         height: 500px;
         min-height: 500px;
         position: relative;
-        top: 90px;
-        text-align: center;
+        top: 120px;
+        text-align: left;
     }
     .hf-user{
-        display: inline-block;
         height: 85px;
         line-height: 85px;
-        position: absolute;
-        right: 0px;
+        position: relative;
+        float: right;
+        right: 80px;
     }
     .hf-user a{
         font-size: 16px;
@@ -284,11 +255,11 @@ publish.css
         list-style: none;
         display: inline-block;
         height: 85px;
-        margin: 0px 50px;
         line-height: 85px;
         font-size: 0;
-        position: absolute;
+        position: relative;
         padding: 0px;
+        float: left;
     }
 
     .hf-tab .hf-item{
@@ -329,15 +300,48 @@ publish.css
         background: rgba(0, 146, 192, 0.7);
     }
 
+    /**
+    home
+     */
+
+    #home .homebg{
+        border-radius: 5px;
+        height: 400px;
+        width: 100%;
+    }
+
+
+    #homeTab,#publishTab{
+        margin: 0px;
+        width: 300px;
+        padding: 0 50px 0 150px;
+        position: fixed;
+        text-align: center;
+    }
+
+    #homeTab li.hf-item,#publishTab li.hf-item{
+        display: block;
+    }
+    #homeTab li.hf-item>a,#publishTab li.hf-item>a{
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #home .tab-content,#editor-wrapper,#search .hf-content{
+        vertical-align: top;
+        position: relative;
+        float: left;
+        left: 300px;
+    }
 }
 @media screen and (max-width: 960px)  {
 
     .hf-user{
-        display: inline-block;
         height: 85px;
         line-height: 85px;
-        position: absolute;
-        right: 100px;
+        position: relative;
+        float: right;
+        right: 60px;
     }
     .hf-user a{
         font-size: 16px;
@@ -411,17 +415,13 @@ publish.css
         font-size: 0;
         position: fixed;
         top: 85px;
-        left: 0px;
+        left: 30px;
         padding: 0px;
-        background: #fff;
-        width: 100%;
         border-top: 1px solid #ececec;
-        box-shadow: 3px 3px 8px #ececec;
         z-index: 10;
     }
 
     .hf-tab .hf-item{
-        display: inline-block;
         font-size: 16px;
         border-radius: 2px;
         cursor: pointer;
@@ -450,12 +450,7 @@ publish.css
     }
 
     .hf-nav span.li-bottom {
-        position: absolute;
-        bottom: -1px;
-        left: 0px;
-        width: 100px;
-        height: 3px;
-        background: rgba(0, 146, 192, 0.7);
+        display: none;
     }
 
     .hf-container {
@@ -464,9 +459,53 @@ publish.css
         height: 500px;
         min-height: 500px;
         position: relative;
-        top: 155px;
+        top: 85px;
         text-align: center;
+        float: left;
+        left: 150px;
     }
+
+    #home .homebg{
+        border-radius: 5px;
+        height: 400px;
+        width: 100%;
+    }
+
+
+    #homeTab,#publishTab{
+        margin: 0px auto;
+        height: 65px;
+        padding: 0px;
+        position: fixed;
+        right: 0px;
+        left: 150px;
+        line-height: 65px;
+        z-index: 1;
+        width: 200px;
+    }
+
+    #homeTab li.hf-item,#publishTab li.hf-item{
+        display: inline-block;
+        padding: 0px 10px;
+    }
+    #homeTab li.hf-item>a,#publishTab li.hf-item>a{
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #home .tab-content,#editor-wrapper{
+        vertical-align: top;
+        position: relative;
+        float: left;
+        top: 65px;
+    }
+    #search .hf-content{
+        vertical-align: top;
+        position: relative;
+        float: left;
+        top: 15px;
+    }
+
 }
 #articleTitle,#articleTag{
     text-align: left;
@@ -608,13 +647,10 @@ editor
 /**
 search
  */
-#search .hf-search{
-    margin: 0px auto;
-}
 #search .hf-search >.hf-input{
     width: 540px;
     padding-right: 30px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 #search .search-btn{
@@ -634,44 +670,3 @@ search
     opacity: 1;
 }
 
-
-/**
-home
- */
-
-#home .homebg{
-    border-radius: 5px;
-    height: 400px;
-    width: 100%;
-}
-
-#home .container{
-    margin-top: 30px;
-    padding: 0px;
-}
-#home .container{
-    text-align: left;
-    min-width: 1000px;
-}
-
-#homeTab{
-    display: inline-block;
-    margin: 0px;
-    width: 200px;
-    text-align: center;
-    padding: 0 30px;
-}
-
-#homeTab li.hf-item{
-    display: block;
-}
-#homeTab li.hf-item>a{
-    padding: 0px 30px;
-    height: 40px;
-    line-height: 40px;
-}
-
-#home .tab-content{
-    display: inline-block;
-    vertical-align: top;
-}
