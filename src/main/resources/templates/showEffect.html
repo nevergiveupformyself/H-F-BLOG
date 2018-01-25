@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="showCss">
+<div th:fragment="showCss" id="showCss">
     <div class="return-top">
         <span>返回顶部</span>
     </div>
@@ -10,7 +10,16 @@
         <span class="hf-text">/Css效果展示界面</span>
     </div>
 
-    <div class="effect-css">
+    <div class="effect-module">
+        <div class="css-sort">背景与边框</div>
+        <div class="css-effect">
+            <div id="borderAndTransparent">
+                <div class="text">
+                    Can I haz semi-transparent borders? Pretty please?
+                </div>
+            </div>
+            <div class="css-title">半透明边框</div>
+        </div>
 
     </div>
 </div>
