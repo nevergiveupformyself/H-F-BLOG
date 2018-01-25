@@ -2,8 +2,13 @@
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
 <div class="hf-content" th:fragment="home">
-
     <div>
+        <div id="homeBg">
+            <img  th:src="@{images/home.jpg}"/>
+            <div id="recommend">
+                <span class="text">哈哈哈哈哈哈</span>
+            </div>
+        </div>
         <ul id="homeTab" class="hf-tab">
             <li class="hf-item active">
                 <a href="#hot" class="bottom-spread-in-out" data-toggle="tab">最热文章</a>
@@ -14,10 +19,8 @@
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active"  id="hot">
-                <img class="homebg" th:src="@{images/homebg.png}"/>
-
                 <div class="show-content">
-                    <!--aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
@@ -25,13 +28,12 @@
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
-                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热-->
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="new">
-                <img class="homebg" th:src="@{images/homebg2.png}"/>
                 <div class="show-content">
-                    <!--bbb 最新最新 bbb 最新最新 bbb 最新最新
+                    bbb 最新最新 bbb 最新最新 bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
@@ -41,11 +43,13 @@
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
-                    bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新-->
+                    bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                 </div>
             </div>
         </div>
+        <div class="return-top">
+            <span>返回顶部</span>
+        </div>
     </div>
-
 </div>
 </html>

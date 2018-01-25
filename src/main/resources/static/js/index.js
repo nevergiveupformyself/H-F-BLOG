@@ -377,6 +377,30 @@ var publishArticle = function (){
         }
     })
 };
+
 $(".return-top").on("click",function(){
     $("body,html").animate({scrollTop:0});
+});
+
+$(window).on("scroll",function(){
+    var scrollTop = $(window).scrollTop();
+    if(scrollTop>0){
+        $(".return-top").fadeIn();
+    }else{
+        $(".return-top").fadeOut();
+    }
+});
+
+$('.hf-nav .hf-item').click(function (e) {
+
+
+    if($(this).text().trim() != "首页"){
+       $(".hf-header .head-animate").show().stop().animate({
+           "width":"55%"
+       });
+    }else{
+        $(".hf-header .head-animate").hide().css({
+            "width":"0"
+        });
+    }
 });

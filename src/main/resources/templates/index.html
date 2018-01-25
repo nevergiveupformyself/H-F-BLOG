@@ -4,8 +4,10 @@
 <head th:replace="common/header :: head"></head>
 <body>
    <div class="hf-header">
-    <div th:replace="common/header :: header"></div>
-    <ul class="hf-nav hf-tab">
+       <span class="hf-title">
+           H &amp; F
+       </span>
+       <ul class="hf-nav hf-tab">
         <li class="hf-item active" style="width: 100px">
             <a href="#home" data-toggle="tab">首页</a>
         </li>
@@ -20,7 +22,7 @@
         </li>
         <span class="li-bottom"></span>
     </ul>
-    <div class="hf-user">
+       <div class="hf-user">
         <div th:if="${session.user.username}" class="dropdown">
             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                 <span th:text="${session.user.username}"></span>
@@ -41,6 +43,8 @@
             <a id="register" href="javascript:void(0)" style="margin-left: 20px">注册</a>
         </div>
     </div>
+
+        <div class="head-animate"></div>
     </div>
    <div class="hf-container">
        <div class="tab-content">
