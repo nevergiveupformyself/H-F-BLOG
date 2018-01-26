@@ -11,15 +11,29 @@
         </div>
         <ul id="homeTab" class="hf-tab">
             <li class="hf-item active">
-                <a href="#hot" class="bottom-spread-in-out" data-toggle="tab">最热文章</a>
+                <a href="javascript:void(0)"  >最热文章</a>
             </li>
             <li class="hf-item">
-                <a href="#new" class="bottom-spread-in-out" data-toggle="tab">最新文章</a>
+                <a onclick="scrollTo('new')" href="javascript:void(0)"  >最新文章</a>
             </li>
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active"  id="hot">
+            <div id="hot">
+                <div class="separate" ><span>Hot</span></div>
                 <div class="show-content">
+                    <img class="image" th:src="@{images/test1.png}"/>
+
+                    <div class="show-shadow">
+                        <span class="text">
+                         aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
@@ -29,11 +43,53 @@
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
                     aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    </span>
+                        <span class="hf-btn eye"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                        <span class="hf-btn like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+                        <span class="hf-btn comment"><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+                        <span class="hf-btn">阅读全文</span>
+                    </div>
                 </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="new">
                 <div class="show-content">
-                    bbb 最新最新 bbb 最新最新 bbb 最新最新
+                    <img class="image" th:src="@{images/test1.png}"/>
+
+                    <div class="show-shadow">
+                        <span class="text">
+                         aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    aaa 最热最热aaa 最热最热aaa 最热最热aaa 最热最热
+                    </span>
+                        <span class="hf-btn eye"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                        <span class="hf-btn like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+                        <span class="hf-btn comment"><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+                        <span class="hf-btn">阅读全文</span>
+                    </div>
+                </div>
+                <span class="hf-btn">查看更多</span>
+            </div>
+            <div  id="new">
+                <div class="separate" ><span>New</span></div>
+                <div class="show-content">
+                    <img class="image" th:src="@{images/test.png}"/>
+
+                    <div class="show-shadow">
+                        <span class="text">
+                            bbb 最新最新 bbb 最新最新 bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
@@ -44,11 +100,41 @@
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
                     bbb 最新最新bbb 最新最新bbb 最新最新bbb 最新最新
+                    </span>
+                        <span class="hf-btn eye"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                        <span class="hf-btn like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+                        <span class="hf-btn comment"><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+                        <span class="hf-btn">阅读全文</span>
+                    </div>
                 </div>
+                <span class="hf-btn">查看更多</span>
             </div>
         </div>
-        <div class="return-top">
-            <span>返回顶部</span>
+    </div>
+    <div class="hf-footer">
+        <span class="hf-text">h&f © 2018</span>
+        <div >
+            <div class="bubble bubble0"></div>
+            <div class="bubble bubble1"></div>
+            <div class="bubble bubble2"></div>
+            <div class="bubble bubble3"></div>
+            <div class="bubble bubble4"></div>
+            <div class="bubble bubble5"></div>
+            <div class="bubble bubble6"></div>
+            <div class="bubble bubble7"></div>
+            <div class="jellyfish jellyfish1">
+                <div class="jellyfish_head"></div>
+                <div class="jellyfish_tail">
+                    <div class="jellyfish_tail_in"></div>
+                </div>
+            </div>
+
+            <div class="jellyfish jellyfish2">
+                <div class="jellyfish_head"></div>
+                <div class="jellyfish_tail">
+                    <div class="jellyfish_tail_in"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

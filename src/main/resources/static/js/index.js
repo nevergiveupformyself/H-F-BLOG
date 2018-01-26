@@ -392,15 +392,23 @@ $(window).on("scroll",function(){
 });
 
 $('.hf-nav .hf-item').click(function (e) {
-
-
+   /* $(".hf-header .head-animate").hide().css({
+        "width":"0"
+    });
     if($(this).text().trim() != "首页"){
+        $(".hf-header").addClass("not-home");
        $(".hf-header .head-animate").show().stop().animate({
-           "width":"55%"
+           "width":"100%"
        });
     }else{
-        $(".hf-header .head-animate").hide().css({
-            "width":"0"
-        });
-    }
+        $(".hf-header").removeClass("not-home");
+    }*/
 });
+
+/**
+ * home.js
+ */
+function scrollTo(id){
+    var scrollTop = $("#"+id).offset().top;
+    $("body,html").animate({scrollTop:scrollTop});
+}

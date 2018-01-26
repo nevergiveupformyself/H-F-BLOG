@@ -1,7 +1,7 @@
 
 /*气泡*/
 .bubble {
-    position: fixed;
+    position: absolute;
     font-size: 0;
     line-height: 0;
     width: 20px;
@@ -9,7 +9,7 @@
     border-radius: 50%;
     bottom: 0px;
     border-radius: 50%;
-    box-shadow: 0px 0px 2px rgba(0, 146, 192, 0.7) inset, -1px 1px 2px -1px rgba(0, 146, 192, 0.1);
+    box-shadow: 0px 0px 2px rgba(230, 235, 224,0.7) inset, -1px 1px 2px -1px rgba(230, 235, 224,0.1);
     transform: skew(0deg,2deg);
     animation: bubbleRise 4s linear infinite;
 }
@@ -65,23 +65,23 @@
 }
 
 @keyframes bubbleRise{
-    0%{transform:translate(0px,0px);opacity:0;border-color:rgba(255,255,255,0.2);}
+    0%{transform:translate(0px,0px);opacity:0;border-color:rgba(230, 235, 224,0.2);}
     10%{transform:translate(0px,0px);opacity:1;}
     30%{transform:translate(-1px,-30px);}
     50%{transform:translate(1px,-60px);}
     75%{transform:translate(-1px,-90px) scale(1.2);}
-    98%{opacity:1;border-color:rgba(255,255,255,0.35);}
-    100%{transform:translate(0px,-120px) scale(1.4);opacity:0;border-color:rgba(255,255,255,0.2);}
+    98%{opacity:1;border-color:rgba(230, 235, 224,0.35);}
+    100%{transform:translate(0px,-120px) scale(1.4);opacity:0;border-color:rgba(230, 235, 224,0.2);}
 }
 
 @keyframes bubbleRise{
-    0%{transform:translate(0px,0px); opacity:0; border-color:rgba(255,255,255,0.1);}
+    0%{transform:translate(0px,0px); opacity:0; border-color:rgba(230, 235, 224,0.1);}
     10%{transform:translate(0px,0px); opacity:1;}
     30%{transform:translate(-1px,-15px);}
     50%{transform:translate(1px,-30px);}
     75%{transform:translate(-1px,-50px) scale(1.2);}
-    98%{opacity:1; border-color:rgba(255,255,255,0.25);}
-    100%{transform:translate(0px,-67px) scale(1.4); opacity:0; border-color:rgba(255,255,255,0.1);}
+    98%{opacity:1; border-color:rgba(230, 235, 224,0.25);}
+    100%{transform:translate(0px,-67px) scale(1.4); opacity:0; border-color:rgba(230, 235, 224,0.7);}
 }
 
 
@@ -89,23 +89,23 @@
 .jellyfish1{right:50px;bottom:65px;}
 .jellyfish2{left:120px;bottom:30px;}
 .jellyfish {
-    position:fixed;
+    position:absolute;
     -webkit-animation:jellyfishSwimming 4s linear infinite alternate;
     -moz-animation:jellyfishSwimming 4s linear infinite alternate;
     animation:jellyfishSwimming 4s linear infinite alternate;
     opacity:0.5;
 }
 .jellyfish_head {
-    position: fixed;
+    position: absolute;
     left: 0px;
     top: -15px;
     display: block;
     height: 25px;
     width: 30px;
-    background: rgba(242,156,177,0.1);
-    border: 1px solid rgba(242,156,177,0.1);
+    background: rgba(230, 235, 224,0.1);
+    border: 1px solid rgba(230, 235, 224,0.1);
     border-radius: 20px 20px 10px 10px/20px 20px 16px 16px;
-    box-shadow: 0px 0px 4px rgba(242,156,177,0.7) inset, 1px 1px 2px rgba(242,156,177,0.5) inset, 3px 3px 1px rgba(242,156,177,0.5) inset, -1px -1px 1px rgba(242,156,177,0.3) inset;
+    box-shadow: 0px 0px 4px rgba(230, 235, 224,0.7) inset, 1px 1px 2px rgba(230, 235, 224,0.5) inset, 3px 3px 1px rgba(230, 235, 224,0.5) inset, -1px -1px 1px rgba(230, 235, 224,0.3) inset;
     animation: jellyfish_headChange 4s linear infinite alternate;
 }
 .jellyfish_head:after {
@@ -113,26 +113,26 @@
     display:block;
     height:3px;
     width:5px;
-    background:rgba(242,156,177,0.5);
-    position:fixed;
+    background:rgba(230, 235, 224,0.5);
+    position:absolute;
     left:3px;
     top:2px;
     border-radius:5px/3px;
-    box-shadow:0px 0px 1px rgba(242,156,177,0.9) inset;
+    box-shadow:0px 0px 1px rgba(230, 235, 224,0.9) inset;
     transform:rotate(-15deg);
 }
 .jellyfish_tail {
-    position:fixed;
+    position:absolute;
     left: 6px;
     top: 8px;
     display:block;
     height:20px;
     width:18px;
-    border:0.5px solid rgba(242,156,177,0.5);
+    border:0.5px solid rgba(230, 235, 224,0.5);
     border-top:none;
     border-bottom:none;
     border-radius:10px 10px 16px 6px/20px 20px 6px 6px;
-    box-shadow:0px 0px 3px rgba(242,156,177,0.5) inset,0px 4px 3px rgba(242,156,177,0.3) inset;
+    box-shadow:0px 0px 3px rgba(230, 235, 224,0.5) inset,0px 4px 3px rgba(230, 235, 224,0.3) inset;
     -webkit-transform-origin:50% 0%;
     -webkit-animation:jellyfish_tailChange 4s linear infinite alternate;
     -moz-transform-origin:50% 0%;
@@ -140,43 +140,43 @@
 }
 .jellyfish_tail:after {
     content:'';
-    position:fixed;
+    position:absolute;
     left:0.5px;
     top:1px;
     display:block;
     height:21px;
     width:15.5px;
-    border:0.5px solid rgba(242,156,177,0.3);
-    border-right-color:rgba(242,156,177,0.5);
+    border:0.5px solid rgba(230, 235, 224,0.3);
+    border-right-color:rgba(230, 235, 224,0.5);
     border-top:none;
     border-bottom:none;
     border-radius:10px/10px 20px 16px 16px;
-    box-shadow:0px 0px 3px rgba(242,156,177,0.5) inset,0px 3px 3px rgba(242,156,177,0.4) inset;
+    box-shadow:0px 0px 3px rgba(230, 235, 224,0.5) inset,0px 3px 3px rgba(230, 235, 224,0.4) inset;
 }
 .jellyfish_tail:before {
     content:'';
-    position:fixed;
+    position:absolute;
     left:1.5px;
     top:1px;
     display:block;
     height:17px;
     width:17px;
-    border-right:0.5px solid rgba(242,156,177,0.5);
+    border-right:0.5px solid rgba(230, 235, 224,0.5);
     border-radius:15px 10px 16px 16px/30px 30px 8px 8px;
-    shadow:0px 0px 3px rgba(242,156,177,0.5) inset;
+    shadow:0px 0px 3px rgba(230, 235, 224,0.5) inset;
     -webkit-transform:rotate(-6deg);
     -moz-transform:rotate(-6deg);
 }
 .jellyfish_tail_in {
-    position:fixed;
+    position:absolute;
     left:-0.5px;
     top:0px;
     display:block;
     height:16px;
     width:10px;
-    border-left:0.5px solid rgba(242,156,177,0.5);
+    border-left:0.5px solid rgba(230, 235, 224,0.5);
     border-radius:10px 20px 16px 10px/20px 20px 6px 20px;
-    box-shadow:3px 0px 3px rgba(242,156,177,0.3) inset;
+    box-shadow:3px 0px 3px rgba(230, 235, 224,0.5) inset;
     -webkit-transform:rotate(14deg);
     -moz-transform:rotate(14deg);
 }

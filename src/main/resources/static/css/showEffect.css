@@ -1,60 +1,36 @@
 
 .effect-module{
-    padding: 10px;
+    padding: 20px;
     border-radius: 3px;
-    box-shadow: 0px 5px 10px #ececec;
-    border: 1px solid #ececec;
+    background: #F4F1BB;
     float: left;
-    margin:0px 15px 15px 0px;
+    margin: 0px 30px 30px 0px;
 }
 
-
-.module-name{
-    clear: both;
-    text-align: center;
-    z-index: 1;
-    margin: 50px auto;
-    display: block;
-    position: relative;
+#showCss{
+    text-align: left;
 }
-.module-name>span{
-    background: #fff;
-    padding: 0 30px 0 30px;
-    z-index: 30;
-    top: 1px;
-    font-size: 78%;
-    text-transform: uppercase;
-}
-.module-name:before{
-    border-top: 1px solid #eee;
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 .effect-content{
     width: 200px;
     height: 150px;
 
 }
-.effect-title{
-    text-align: center;
-    padding: 5px 0px;
-    color: #8e8e8e;
-    cursor: pointer;
-}
-.effect-title:hover{
-    color:rgba(0, 146, 192, 0.7);
+.effect-title:hover {
+    color: #ED6A5A;
     text-decoration: underline;
+}
+
+.effect-title {
+    text-align: center;
+    padding: 10px 0px;
+    color: #9BC1BC;
+    cursor: pointer;
 }
 
 .effect-show{
     width: 200px;
     height: 120px;
+    position: relative;
 }
 
 #borderAndTransparent {
@@ -95,10 +71,14 @@
 
 
 #Mushroom2{
-    position: relative;
+    position: absolute;
     display: inline-block;
     height: 80px;
     bottom: 0px;
+    margin: 0 auto;
+    left: 100px;
+    right: 0px;
+    width: 80px;
 }
 
 #Mushroom2 .head{
@@ -111,7 +91,7 @@
     background: -webkit-radial-gradient(right top,#fff 10%,rgba(0, 146, 192, 0.7) 20%,rgba(0, 146, 192, 1) 75%,#555);
     background: -webkit-radial-gradient(right top,#fff 10%,rgba(0, 146, 192, 0.7) 20%,rgba(0, 146, 192, 1) 75%,#555);
     box-shadow: -2px 2px 5px #555;
-    z-index: 1;
+    z-index: 3;
     overflow: hidden;
 }
 
@@ -154,7 +134,7 @@
     height: 20px;
     left: 15px;
     top: -1px;
-    z-index: 0;
+    z-index: 2;
     box-shadow: -2px 2px 5px #555;
 }
 
@@ -168,15 +148,19 @@
     background: -webkit-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
     background: -moz-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
     background: -ms-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
-    z-index: -1;
+    z-index: 1;
     left: 0px;
 }
 
 #Mushroom1{
-    position: relative;
+    position: absolute;
     display: inline-block;
     height: 80px;
-    bottom: 5px;
+    bottom: 20px;
+    margin: 0 auto;
+    left: -40px;
+    right: 0px;
+    width: 80px;
 }
 
 #Mushroom1 .head{
@@ -189,7 +173,7 @@
     background: -webkit-radial-gradient(right top,#fff 10%,rgba(242, 156, 177, 0.7) 20%,rgba(242, 156, 177, 1) 75%,#555);
     background: -webkit-radial-gradient(right top,#fff 10%,rgba(242, 156, 177, 0.7) 20%,rgba(242, 156, 177, 1) 75%,#555);
     box-shadow: -2px 2px 5px #555;
-    z-index: 1;
+    z-index: 3;
     overflow: hidden;
 }
 
@@ -232,7 +216,7 @@
     height: 30px;
     left: 20px;
     top: -1px;
-    z-index: 0;
+    z-index: 2;
     box-shadow: -2px 2px 5px #555;
 }
 
@@ -246,6 +230,6 @@
     background: -webkit-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
     background: -moz-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
     background: -ms-radial-gradient(right top,#555 10%,#211f1f 20%,#a19e9e 75%,#fdf9f9);
-    z-index: -1;
+    z-index: 1;
     left: -4px;
 }
