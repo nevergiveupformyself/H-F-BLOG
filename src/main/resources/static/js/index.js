@@ -137,9 +137,10 @@ var initImgCover = function(){
 
 function showEffect(name){
     //showCss
-    $("#search .active").removeClass("active").hide();
+    $("#search div.active").removeClass("active").hide();
     $("#search #"+name).addClass("active").show();
 }
+
 /**
  * index.js
  */
@@ -382,6 +383,7 @@ $(".return-top").on("click",function(){
     $("body,html").animate({scrollTop:0});
 });
 
+
 $(window).on("scroll",function(){
     var scrollTop = $(window).scrollTop();
     if(scrollTop>0){
@@ -389,6 +391,7 @@ $(window).on("scroll",function(){
     }else{
         $(".return-top").fadeOut();
     }
+
 });
 
 $('.hf-nav .hf-item').click(function (e) {
@@ -408,7 +411,10 @@ $('.hf-nav .hf-item').click(function (e) {
 /**
  * home.js
  */
-function scrollTo(id){
-    var scrollTop = $("#"+id).offset().top;
-    $("body,html").animate({scrollTop:scrollTop});
+var scrollById = function (id){
+     if(!$("#"+id).length){
+        return;
+     }
+     var scrollTop = $("#"+id).offset().top;
+     $("body,html").animate({scrollTop:scrollTop});
 }

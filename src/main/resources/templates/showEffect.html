@@ -2,22 +2,71 @@
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="showCss" id="showCss">
-    <div style="margin-bottom: 30px;">
+    <div class="showEffectNavBottom"></div>
+    <div class="showEffectNav showEffectNavFixed">
         <span class="levels" onclick="showEffect('showSearch')">查询界面</span>
         <span class="hf-text">/Css效果展示界面</span>
     </div>
     <ul  class="hf-tab">
         <li class="hf-item active">
-            <a href="javascript:void(0)">背景与边框1</a>
-        </li>
-        <li class="hf-item active">
-            <a onclick="scrollTo('bgAndBorder')" href="javascript:void(0)">背景与边框</a>
+            <a href="javascript:void(0)">圆角和阴影</a>
         </li>
         <li class="hf-item">
-            <a onclick="scrollTo('bgAndBorder')" href="javascript:void(0)">背景与边框</a>
+            <a onclick="scrollTo('bgAndBorder')"  href="javascript:void(0)">背景与边框</a>
         </li>
-        <li class="hf-item">
-            <a onclick="scrollTo('bgAndBorder')" href="javascript:void(0)">背景与边框</a>
+    </ul>
+    <div class="separate"><span> 圆角和阴影 </span></div>
+    <ul class="effect-modules" >
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="Mushroom1">
+                        <div class="head">
+                            <div class="dots">
+                                <div class="dot1"></div>
+                                <div class="dot2"></div>
+                                <div class="dot3"></div>
+                                <div class="dot4"></div>
+                            </div>
+                        </div>
+                        <div class="foot">
+                        </div>
+                        <div class="shadow"></div>
+                    </div>
+                    <div id="Mushroom2">
+                        <div class="head">
+                            <div class="dots">
+                                <div class="dot1"></div>
+                                <div class="dot2"></div>
+                                <div class="dot3"></div>
+                            </div>
+                        </div>
+                        <div class="foot">
+                        </div>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+                <div class="effect-title">绘画-蘑菇</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="pikachu" class="wrapper">
+                        <div class="lowerLip-wrapper">
+                            <div class="lowerLip"></div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                        <div class="face left"></div>
+                        <div class="face right"></div>
+                        <div class="upperLip left"></div>
+                        <div class="upperLip right"></div>
+                    </div>
+                </div>
+                <div class="effect-title">绘画-比卡丘</div>
+            </div>
         </li>
     </ul>
     <div class="separate"><span> 背景与边框 </span></div>
@@ -31,39 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="effect-title">半透明边框</div>
-            </div>
-        </li>
-        <li class="effect-module">
-            <div class="effect-content">
-                <div class="effect-show">
-                        <div id="Mushroom1">
-                            <div class="head">
-                                <div class="dots">
-                                    <div class="dot1"></div>
-                                    <div class="dot2"></div>
-                                    <div class="dot3"></div>
-                                    <div class="dot4"></div>
-                                </div>
-                            </div>
-                            <div class="foot">
-                            </div>
-                            <div class="shadow"></div>
-                        </div>
-                        <div id="Mushroom2">
-                            <div class="head">
-                                <div class="dots">
-                                    <div class="dot1"></div>
-                                    <div class="dot2"></div>
-                                    <div class="dot3"></div>
-                                </div>
-                            </div>
-                            <div class="foot">
-                            </div>
-                            <div class="shadow"></div>
-                        </div>
-                    </div>
-                <div class="effect-title">绘画-蘑菇</div>
+                <a href="/article?id=123" class="effect-title">半透明边框</a>
             </div>
         </li>
     </ul>

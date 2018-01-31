@@ -11,7 +11,7 @@
         <li class="hf-item active" style="width: 100px">
             <a href="#home" data-toggle="tab">首页</a>
         </li>
-        <li class="hf-item">
+        <li class="hf-item" th:if="${session.user.username}">
             <a href="#publish" data-toggle="tab">发布</a>
         </li>
         <li class="hf-item">
@@ -52,7 +52,7 @@
                <div th:replace="home:: home"></div>
            </div>
 
-           <div role="tabpanel" class="tab-pane" id="publish">
+           <div role="tabpanel" th:if="${session.user.username}" class="tab-pane" id="publish">
                <div th:replace="publish:: publish"></div>
            </div>
            <div role="tabpanel" class="tab-pane" id="search">
@@ -70,12 +70,15 @@
    <footer th:replace="common/footer::footer"></footer>
    <script type="text/javascript" th:inline="javascript">
        /*<![CDATA[*/
+       var userName = [[${session.user.username}]];
        //index
        initNavItemClick();
        //home
        initImgCover();
        //  pushlish
-       initPublish();
+       if(userName){
+           initPublish();
+       }
 
        /*]]>*/
    </script>
