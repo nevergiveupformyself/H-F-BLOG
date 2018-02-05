@@ -51,7 +51,6 @@
            <div role="tabpanel" class="tab-pane active"  id="home">
                <div th:replace="home:: home"></div>
            </div>
-
            <div role="tabpanel" th:if="${session.user.username}" class="tab-pane" id="publish">
                <div th:replace="publish:: publish"></div>
            </div>
@@ -60,6 +59,9 @@
            </div>
            <div role="tabpanel" class="tab-pane" id="about">
                <div th:replace="about:: about"></div>
+           </div>
+           <div role="tabpanel" class="tab-pane" id="">
+
            </div>
        </div>
    </div>
@@ -72,6 +74,8 @@
        /*<![CDATA[*/
        var userName = [[${session.user.username}]];
        //index
+       initImage();
+      /* initImage2();*/
        initNavItemClick();
        //home
        initImgCover();

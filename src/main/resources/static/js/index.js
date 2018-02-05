@@ -368,6 +368,7 @@ var publishArticle = function (){
     });
     $.ajax({
         type:"POST",
+        dataType:"json",
         data:{
             articleName:title,
             articleContent:value
@@ -417,4 +418,79 @@ var scrollById = function (id){
      }
      var scrollTop = $("#"+id).offset().top;
      $("body,html").animate({scrollTop:scrollTop});
+};
+
+/**
+ * 图片重聚
+ * */
+
+var initImage = function(){
+
+    var width = 800;
+    var height = 560;
+    var arr=[];
+    var xMax = width/80,yMax = height/80;
+    for(var i=0;i<xMax;i++){
+        for(var j=0;j< yMax;j++){
+            arr.push({
+                x:i*80,
+                y:j*80
+            })
+        }
+    }
+    init(40,"homeBgImage",width,height,main);
+
+    var imgData = [{
+        name:"img",
+        path:"images/home.jpg"
+    }];
+
+    var imgList;
+    var mainBitmap,mainBitmapHeight,mainBitmapWidth;
+    var backLayer;
+    function main(){
+        LLoadManage.load(
+            imgData,
+            function(progress){},
+            loadOver
+        );
+    }
+    function loadOver(result){
+        imgList = result;
+        backLayer = new LSprite();
+        addChild(backLayer);
+        mainBitmap = new LBitmap(new LBitmapData(imgList["img"]));
+        mainBitmapHeight = mainBitmap.getHeight();
+        mainBitmapWidth = mainBitmap.getWidth();
+        var bg = new LBitmap(new LBitmapData("#ED6A5A",0,0,mainBitmapWidth,mainBitmapHeight));
+        backLayer.addChild(bg);
+        backLayer.addEventListener(LEvent.ENTER_FRAME,onFrame);
+    }
+
+    var index = 0,flagArr=[];
+    function onFrame(){
+        var bitmapData,bitmap;
+        var length = arr.length;
+        var flag = Math.floor(Math.random()*(length));
+
+        while(flagArr.indexOf(flag) != -1 ){
+            flag = index;
+            index = index + 1;
+        }
+        if(index > length){
+            backLayer.removeEventListener(LEvent.ENTER_FRAME);
+            return;
+        }
+
+        flagArr.push(flag);
+        var x = arr[flag].x,y = arr[flag].y;
+        bitmapData = new LBitmapData(imgList["img"],x,y,80,80);
+        bitmap = new LBitmap(bitmapData);
+        bitmap.x = x;
+        bitmap.y = y;
+        backLayer.addChild(bitmap);
+
+    }
+
 }
+

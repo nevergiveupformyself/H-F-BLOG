@@ -285,19 +285,20 @@ ul.hf-reversal{
         position: relative;
         height: 850px;
     }
-    #home #homeBg>img{
+    #home #homeBg> .image{
         width: 740px;
         max-width: 100%;
         left: 12%;
         position: relative;
+        height: 509px;
     }
     #home #recommend{
         width: 100%;
         position: relative;
-        background: #ED6A5A;
         height: 250px;
         top: 50px;
         padding: 50px;
+        background: #ED6A5A;
         color: #E6EBE0;
         text-align: center;
     }
@@ -452,11 +453,12 @@ ul.hf-reversal{
         position: relative;
         height: 650px;
     }
-    #home #homeBg>img{
+    #home #homeBg> .image{
         width: 740px;
         max-width: 100%;
         left: 12%;
         position: relative;
+        height: 509px;
     }
     #home #recommend{
         width: 600px;
