@@ -2,19 +2,298 @@
 <html lang="zh-CN"
       xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="showCss" id="showCss">
-    <div class="showEffectNavBottom"></div>
     <div class="showEffectNav showEffectNavFixed">
         <span class="levels" onclick="showEffect('showSearch')">查询界面</span>
         <span class="hf-text">/Css效果展示界面</span>
     </div>
     <ul  class="hf-tab">
         <li class="hf-item active">
-            <a href="javascript:void(0)">圆角和阴影</a>
+            <a href="javascript:void(0)">背景与边框</a>
+
         </li>
         <li class="hf-item">
-            <a onclick="scrollTo('bgAndBorder')"  href="javascript:void(0)">背景与边框</a>
+            <a onclick="scrollTo('other')"   href="javascript:void(0)">其他</a>
         </li>
     </ul>
+    <div class="separate"><span> 背景与边框 </span></div>
+    <ul class="effect-modules" id="bgAndBorder">
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="borderAndTransparent">
+                        <div class="text">
+                            <span>Can I haz semi-transparent borders? Pretty please?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="effect-title">半透明边框</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="moreBorder">
+                    </div>
+                </div>
+                <div class="effect-title">多重边框</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="borderAndB-R">
+                    </div>
+                </div>
+                <div class="effect-title">边框内圆角</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <!--蝉原则 通过质数来增加随机真实性-->
+                <div class="effect-show">
+                    <div id="BgPseudoRandom">
+                    </div>
+                </div>
+                <div class="effect-title">伪随机背景</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content" >
+                <!--蝉原则 通过质数来增加随机真实性-->
+                <div class="effect-show" >
+                    <div id="borderImage-2">
+                        <div id="borderImage-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="effect-title">连续的图像边框</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content" style="width: auto">
+                <div class="effect-show" style="display: inline-block">
+                    <div id="bgStripe-C">
+                    </div>
+
+                </div>
+                <div class="effect-show" style="display: inline-block">
+                    <div id="bgStripe-R">
+                    </div>
+                </div>
+                <div class="effect-show" style="display: inline-block">
+                    <div id="bgStripe-S">
+                    </div>
+                </div>
+                <div class="effect-show" style="display: inline-block">
+                    <div id="bgStripe-L">
+                    </div>
+                </div>
+                <div class="effect-title">条纹背景</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content" style="width: auto;">
+                <div class="effect-show" style="display: inline-block">
+                    <!--http://lea.verou.me/css3patterns-->
+                    <!--http://bytesizematters.com 文件大小-->
+                    <div id="advancedBg-1" >
+                    </div>
+                </div>
+                <div class="effect-show" style="display: inline-block">
+                    <div id="advancedBg-2" >
+                    </div>
+                </div>
+                <div class="effect-show" style="display: inline-block">
+                    <div id="advancedBg-3" >
+                    </div>
+                </div>
+                <div class="effect-show" style="display: inline-block">
+                    <div id="advancedBg-4" >
+                    </div>
+                </div>
+                <div class="effect-title">复杂背景图案</div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="separate"><span> 形状 </span></div>
+    <ul class="effect-modules" >
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="autoResizeOval-1">
+                    </div>
+                    <div id="autoResizeOval-2">
+                    </div>
+                    <div id="autoResizeOval-3">
+                    </div>
+                </div>
+                <div class="effect-title">自适应的椭圆</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="parallelogram">
+                        字体不要倾斜
+                    </div>
+                </div>
+                <div class="effect-title">平行四边形</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <img id="diamond" th:src="@{images/effectImg1.png}"/>
+                </div>
+                <div class="effect-title">菱形图片</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="cornerCut-1"></div>
+                    <div id="cornerCut-2"></div>
+                </div>
+                <div class="effect-title">切角效果</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <ul id="echelon">
+                        <li><a>Home</a></li>
+                        <li><a>Projects</a></li>
+                        <li><a>About</a></li>
+                    </ul>
+                </div>
+                <div class="effect-title">梯形标签页</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="pieChart-1" >
+                        <span>css</span>
+                    </div>
+                    <div id="pieChart-2" >
+                        <svg viewBox="0 0 32 32">
+                            <circle r="16" cx="16" cy="16"/>
+                        </svg>
+                        <span>svg</span>
+                    </div>
+
+                </div>
+                <div class="effect-title">饼图</div>
+            </div>
+        </li>
+    </ul>
+
+
+    <div class="separate"><span> 视觉效果 </span></div>
+    <ul class="effect-modules" >
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="singleSideShadow-1"></div>
+                    <div id="singleSideShadow-2"></div>
+                    <div id="singleSideShadow-3"></div>
+                </div>
+                <div class="effect-title">单侧投影</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="irregular" class="fullBg">
+                        <span>Dotted border</span>
+                    </div>
+                </div>
+                <div class="effect-title">不规则投影</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="dyeingEffect" class="fullBg"></div>
+                </div>
+                <div class="effect-title">染色效果</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="woolGlassEffect" class="fullBg">
+                        <div>
+                           <span>毛玻璃效果展示</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="effect-title">毛玻璃效果</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="angleEffect" class="fullBg">
+                    </div>
+                </div>
+                <div class="effect-title">折角效果</div>
+            </div>
+        </li>
+    </ul>
+
+
+    <div class="separate"><span> 字体排印 </span></div>
+    <ul class="effect-modules" >
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="hyphens" class="fullBg">
+                        The Only Way to get rid of a temptation is to yield to it
+                        The Only Way to get rid of a temptation is to yield to it
+                        <br/>
+                        (目前还不支持此css属性)
+                    </div>
+                </div>
+                <div class="effect-title">连字符断行</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="insertingLine" class="fullBg">
+                        <dl>
+                            <dt>Name:</dt>
+                            <dd>xxx</dd>
+
+                            <dt>Email:</dt>
+                            <dd>xxx@sina.com</dd>
+
+                            <dt>Age:</dt>
+                            <dd>xxx</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="effect-title">插入换行</div>
+            </div>
+        </li>
+        <li class="effect-module">
+            <div class="effect-content">
+                <div class="effect-show">
+                    <div id="zebraStripes" class="fullBg">
+                        <span>for(var i=0;i<10;i++){</span>
+                        <span>if(i == 5){</span>
+                        <span> return;</span>
+                        <span>  }</span>
+                        <span> }</span>
+                    </div>
+                </div>
+                <div class="effect-title">文本行的斑马条纹</div>
+            </div>
+        </li>
+    </ul>
+
     <div class="separate"><span> 圆角和阴影 </span></div>
     <ul class="effect-modules" >
         <li class="effect-module">
@@ -46,7 +325,7 @@
                         <div class="shadow"></div>
                     </div>
                 </div>
-                <div class="effect-title">绘画-蘑菇</div>
+                <div class="effect-title">蘑菇</div>
             </div>
         </li>
         <li class="effect-module">
@@ -65,22 +344,53 @@
                         <div class="upperLip right"></div>
                     </div>
                 </div>
-                <div class="effect-title">绘画-比卡丘</div>
+                <div class="effect-title">皮卡丘</div>
             </div>
         </li>
     </ul>
-    <div class="separate"><span> 背景与边框 </span></div>
-    <ul class="effect-modules" id="bgAndBorder">
+
+    <div class="separate"><span> 其他 </span></div>
+    <ul class="effect-modules" id="other">
         <li class="effect-module">
-            <div class="effect-content">
-                <div class="effect-show">
-                    <div id="borderAndTransparent">
-                        <div class="text">
-                            <span>Can I haz semi-transparent borders? Pretty please?</span>
-                        </div>
+            <div class="effect-content" style="width: auto;height: auto;">
+                <div class="effect-show" style="width: auto;height: auto;">
+                    <div class="graph">
+                        <ul class="months">
+                            <li>Jan</li>
+                            <li>Feb</li>
+                            <li>Mar</li>
+                            <li>Apr</li>
+                            <li>May</li>
+                            <li>Jun</li>
+                            <li>Jul</li>
+                            <li>Aug</li>
+                            <li>Sep</li>
+                            <li>Oct</li>
+                            <li>Nov</li>
+                            <li>Dec</li>
+                        </ul>
+                        <ul class="days">
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tue</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+                        <ul class="squares">
+                            <!-- added via javascript -->
+                        </ul>
                     </div>
                 </div>
-                <a href="/p/123" class="effect-title">半透明边框</a>
+                <script>
+                    const squares = document.querySelector('.squares');
+                    for (var i = 1; i < 365; i++) {
+                        const level = Math.floor(Math.random() * 3);
+                        squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
+                    }
+                </script>
+                <div class="effect-title">gtihub 日志布局</div>
             </div>
         </li>
     </ul>

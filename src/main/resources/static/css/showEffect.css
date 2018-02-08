@@ -1,4 +1,15 @@
 
+.autoWidth{
+    width: auto !important;
+}
+.inline{
+    display: inline-block !important;
+}
+
+.fullBg{
+    width: 100%;
+    height: 100%;
+}
 .effect-module{
     padding: 20px;
     border-radius: 3px;
@@ -9,7 +20,8 @@
 
 #showCss{
     text-align: left;
-    margin-top: 100px;
+    margin-top: 30px;
+    min-width: 1160px;
 }
 .effect-content{
     width: 200px;
@@ -35,8 +47,7 @@
 }
 
 #borderAndTransparent {
-    background-image: url(../images/test.png);
-    background-repeat: no-repeat;
+    background: #ED6A5A;
     width: 100%;
     height: 100%;
     position: relative;
@@ -352,6 +363,7 @@
     position: absolute;
     bottom: 0;
     overflow: hidden;
+    transform: rotate(0deg); /*饼图有个翻转动画会影响到它*/
 }
 
 #pikachu .lowerLip-wrapper .lowerLip:after{
@@ -369,13 +381,13 @@
 
 
 #search .showEffectNav{
-    margin-bottom: 30px;
     height: 70px;
-    background: #ED6A5A;
     line-height: 70px;
-    color: #E6EBE0;
+    color: #9BC1BC;
     padding: 0px 20px;
     font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 3px 5px rgba(255, 255, 255, 0.8);
 }
 #search .showEffectNav .levels{
     cursor: pointer;
@@ -384,22 +396,612 @@
     text-decoration: underline;
 }
 
-#search .showEffectNav .hf-text{
-    color: #fff;
-}
 #search .showEffectNavFixed{
     position: fixed;
     margin: 0 auto;
     width: 80%;
-    z-index: 3;
-    top: 120px;
+    z-index: 6;
+    top: 70px;
 }
 
-#search .showEffectNavBottom{
-    position: fixed;
+
+:root {
+    --square-size: 15px;
+    --square-gap: 5px;
+    --week-width: calc(var(--square-size) + var(--square-gap));
+}
+
+#search .graph .months { grid-area: months; }
+#search .graph  .days { grid-area: days; }
+#search .graph  .squares { grid-area: squares; }
+
+#search .graph {
+    display: inline-grid;
+    grid-template-areas: "empty months"
+    "days squares";
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+}
+
+#search .graph .months {
+    display: grid;
+    grid-template-columns: calc(var(--week-width) * 4) /* Jan */
+    calc(var(--week-width) * 4) /* Feb */
+    calc(var(--week-width) * 4) /* Mar */
+    calc(var(--week-width) * 5) /* Apr */
+    calc(var(--week-width) * 4) /* May */
+    calc(var(--week-width) * 4) /* Jun */
+    calc(var(--week-width) * 5) /* Jul */
+    calc(var(--week-width) * 4) /* Aug */
+    calc(var(--week-width) * 4) /* Sep */
+    calc(var(--week-width) * 5) /* Oct */
+    calc(var(--week-width) * 4) /* Nov */
+    calc(var(--week-width) * 5) /* Dec */;
+}
+
+#search .graph .days,
+#search .graph .squares {
+    display: grid;
+    grid-gap: var(--square-gap);
+    grid-template-rows: repeat(7, var(--square-size));
+}
+
+#search .graph .squares {
+    grid-auto-flow: column;
+    grid-auto-columns: var(--square-size);
+}
+
+
+#search .graph {
+    padding: 20px;
+    border: 1px #e1e4e8 solid;
+}
+
+#search .graph .days li:nth-child(odd) {
+    visibility: hidden;
+}
+
+#search .graph .squares li {
+    background-color: #ebedf0;
+    list-style: none;
+}
+#search .graph ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#search .graph .squares li[data-level="1"] {
+    background-color: #c6e48b;
+}
+
+#search .graph .squares li[data-level="2"] {
+    background-color: #7bc96f;
+}
+
+#search .graph .squares li[data-level="3"] {
+    background-color: #196127;
+}
+
+
+
+#search #moreBorder{
+    width: 160px;
+    height: 80px;
+    top: 20px;
+    position: relative;
+    margin: 0px auto;
+    background: #F4F1BB;
+    box-shadow: 0 0 0 10px #ED6A5A, 0 0 0 15px #F4F1BB, 0 2px 5px 20px #ED6A5A;
+}
+
+#search #borderAndB-R{
+    width: calc(100% - 1.3em);
+    height: calc(100% - 1.3em);
+    position: relative;
+    top: 0.6em;
+    margin: 0px auto;
+    background: #F4F1BB;
+    border-radius: .8em;
+    padding: 1em;
+    box-shadow: 0 0 0 0.6em #ED6A5A;
+    outline: 0.7em solid #ED6A5A;
+}
+
+/*<!--  linear-gradient(c1 b1,c2 b2)
+b1和b2是色标比例，越小产生的过度区域就越小 大于等于1就相当于没了过渡区
+
+如果色标的位置比整个列表中在它之前的色标位置值都要小，那么会被设置为他前面所有色标位置值得最大值
+-->*/
+#search #bgStripe-R{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(to right,#5CA4A9 33.3%,#ED6A5A 0,#ED6A5A 66.6%,#E6EBE0 0);
+    background-size: 45px 100%;
+}
+
+#search #bgStripe-C{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(#5CA4A9 33.3%,#ED6A5A 0,#ED6A5A 66.6%,#E6EBE0 0);
+    background-size: 100% 45px; /*背景宽高，默认会重复，所以就是条纹了*/
+}
+
+#search #bgStripe-S{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+   /* background: linear-gradient(45deg,
+                #5CA4A9 16.65%,#ED6A5A 0,
+                #ED6A5A 33.3%,#E6EBE0 0,
+                #E6EBE0 49.95%,#5CA4A9 0,
+                #5CA4A9 66.6%, #ED6A5A 0,
+                #ED6A5A 83.25%,#E6EBE0 0
+    );*/
+    /*background: repeating-linear-gradient(45deg,
+    #5CA4A9 0,#5CA4A9 16.65%,
+    #ED6A5A 0,#ED6A5A 33.33%,
+    #E6EBE0 0,#E6EBE0 49.98%);*/
+    background:repeating-linear-gradient(45deg, #ED6A5A 0,#ED6A5A 25%,#E6EBE0 0,#E6EBE0 50%);
+    background-size: 42.426406871px 42.426406871px; /*宽度如果想要15px 则就是15px根号2*2 背景宽高，默认会重复，所以就是条纹了*/
+}
+
+/**
+相似的条纹图案
+ */
+#search #bgStripe-L{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: #ED6A5A;
+    background-image: repeating-linear-gradient(30deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,.1) 15px,transparent 0,transparent 30px);
+}
+
+
+#search #advancedBg-1{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: #E6EBE0;
+    background-image: linear-gradient(90deg,rgba(237, 106, 90,0.8) 50% ,transparent 0), linear-gradient(rgba(237, 106, 90,0.8) 50% ,transparent 0);
+    background-size: 30px 30px;
+}
+
+#search #advancedBg-2{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: #ED6A5A;
+    background-image:
+                      linear-gradient(#E6EBE0 2px,transparent 0),
+                      linear-gradient(90deg,#E6EBE0 2px ,transparent 0),
+                      linear-gradient(hsla(0,0%,100%,.3) 1px,transparent 0),
+                      linear-gradient(90deg,hsla(0,0%,100%,.3) 1px,transparent 0);
+    background-size: 75px 75px,75px 75px,15px 15px,15px 15px;
+}
+
+#search #advancedBg-3{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: #ED6A5A;
+    background-image: radial-gradient(#E6EBE0 30%,transparent 0),radial-gradient(#E6EBE0 30%,transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+}
+
+#search #advancedBg-4{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    background: #ED6A5A;
+    background-image:
+            linear-gradient(45deg,#E6EBE0 26%,transparent 0,transparent 75%,#E6EBE0 0),
+           linear-gradient(45deg,#E6EBE0 26%,transparent 0,transparent 75%,#E6EBE0 0);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+}
+
+
+#search #BgPseudoRandom{
+    position: relative;
     width: 100%;
-    height: 200px;
+    height: 100%;
+   /*background: linear-gradient(90deg,#5CA4A9 15%,#ED6A5A 0,#ED6A5A 40%,#9BC1BC 0,#9BC1BC 65%,#E6EBE0 0); */
+    background:#E6EBE0 ;
+    background-image: linear-gradient(90deg,#5CA4A9 11px,transparent 0),
+    linear-gradient(90deg,#ED6A5A 23px,transparent 0),
+    linear-gradient(90deg,#7bc96f 41px,transparent 0);
+    background-size: 41px 100%,61px 100%,83px 100%;
+}
+
+#search #borderImage-1{
+    position: relative;
+    width:  calc(95% - 1em);
+    margin: 0 auto;
+    height: 100%;
+    padding: 1em;
+    border: 1em solid transparent;
+    background: linear-gradient(#E6EBE0,#E6EBE0) padding-box,
+    repeating-linear-gradient(-45deg,#ED6A5A 0,#ED6A5A 12.5%,transparent 0,transparent 25%,#5CA4A9 0,#5CA4A9 37.5%,transparent 0,transparent 50%) 0/5em 5em;
+}
+
+@keyframes ants {
+    to{
+        background-position: 100%
+    }
+}
+
+#search #borderImage-2{
+    position: relative;
+    width: calc(100% - 1px);
+    margin: 0 auto;
+    height: 100%;
+    padding: 1em;
+    border: 1px solid transparent;
+    background: linear-gradient(#F4F1BB,#F4F1BB) padding-box,
+    repeating-linear-gradient(-45deg,#ED6A5A 0,#ED6A5A 25%,#E6EBE0 0,#E6EBE0 50%) 0/.6em .6em;
+    animation: ants 12s linear infinite;/*infinite 动画连续播放*/
+}
+
+#search #autoResizeOval-1{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    background: #ED6A5A;
+    border-radius: 50% / 100% 100% 0 0;
+    margin: 10px;
+}
+
+#search #autoResizeOval-2{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    border-radius: 100% 0 0 100% / 50%;
+    background: #ED6A5A;
+    margin: 10px;
+    display: inline-block;
+}
+
+#search #autoResizeOval-3{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    border-radius: 100% 0 0 0;/*第一个角横竖半径都为100% 其他都为0 就没有必要再用斜杠写法了*/
+    background: #ED6A5A;
+    margin: 10px;
+    display: inline-block;
+}
+
+#search #parallelogram{
+    position: relative;
+    width: 120px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    z-index: 0;
+    color: #E6EBE0;
+}
+#search #parallelogram:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #ED6A5A;
+    transform: skew(20deg);
+}
+
+#search #diamond{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);/*polygon 多边形裁剪*/
+    transition: 1s clip-path;
+}
+#search #diamond:hover{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+
+#cornerCut-1{
+    width: 100%;
+    height: 48%;
+    background: #ED6A5A;
+    background:
+            linear-gradient(135deg,transparent 10px,#ED6A5A 0) top left,
+            linear-gradient(-135deg,transparent 10px,#ED6A5A 0) top right,
+            linear-gradient(-45deg,transparent 10px,#ED6A5A 0) bottom right,
+             linear-gradient(45deg,transparent 10px,#ED6A5A 0) bottom left;
+    background-size: 51% 51%;
+    background-repeat: no-repeat;
+}
+
+
+#cornerCut-2{
+    width: 100%;
+    margin-top: 2%;
+    height: 48%;
+    background: #ED6A5A;
+    background:
+            radial-gradient(circle at top left,transparent 15px,#ED6A5A 0) top left,
+            radial-gradient(circle at top right,transparent 15px,#ED6A5A 0) top right,
+            radial-gradient(circle at bottom right,transparent 15px,#ED6A5A 0) bottom right,
+            radial-gradient(circle at bottom left,transparent 15px,#ED6A5A 0) bottom left;
+    background-size: 51% 51%;
+    background-repeat: no-repeat;
+}
+
+#echelon{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#echelon li> a{
+   position: relative;
+   display: inline-block;
+   padding: 1.3em 1em 0;
+    color: #E6EBE0;
+    z-index: 0;
+}
+
+#echelon li>a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #ED6A5A;
+    background-image: linear-gradient(rgba(237, 106, 90, 0.6) ,rgba(237, 106, 90, 0) );
+    border: 1px solid #ED6A5A;
+    border-bottom: 0;
+    border-radius: .5em .5em 0 0;
+    box-shadow: 0 0.15em #E6EBE0 inset;
+    transform: perspective(.5em) rotateX(5deg);
+    transform-origin: bottom;
+}
+
+#pieChart-1{
+    position: relative;
+    width: 80px;
+    line-height: 80px;
+    height: 80px;
+    float: left;
+    top: 20px;
+    border-radius: 50%;
+    background:#ED6A5A ;
+    background-image:linear-gradient(to right,transparent 50%,#9BC1BC 0);
+    text-align: center;
+}
+
+@keyframes pie-spin {
+    100%{
+        transform : rotate(.5turn);
+    }
+}
+
+@keyframes pie-bg {
+    50% {background:#9BC1BC }
+}
+
+#search #pieChart-1:before{
+    content: '';
+    display: block;
+    margin-left: 50%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    animation: pie-spin 3s linear infinite,pie-bg 6s step-end infinite;
+}
+
+
+#pieChart-2 {
+    position: relative;
+    width: 80px;
+    line-height: 80px;
+    height: 80px;
+    float: right;
+    top: 20px;
+    text-align: center;
+}
+@keyframes fillup {
+    to{stroke-dasharray: 100 100}
+}
+#pieChart-2 svg circle{
+    fill:#ED6A5A;
+    stroke: #9BC1BC;
+    stroke-width: 32px;
+    stroke-dasharray: 0 100;
+    animation: fillup 5s linear infinite;
+}
+#pieChart-2 svg{
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    background: #ED6A5A;
+    width: 80px;
+    height: 80px;
+}
+
+
+#pieChart-1 span,#pieChart-2 span{
+    position: absolute;
+    color: #E6EBE0;
     top: 0px;
-    background: white;
-    z-index: 2;
+    font-weight: bold;
+    left: 30px;
+}
+
+
+#singleSideShadow-1{
+    width: 46%;
+    height: 46%;
+    margin: 2%;
+    background: #ED6A5A;
+    float: left;
+    box-shadow: 0px 6px 6px -3px #555; /*第四个参数会根据你指定的值去扩大或者缩小投影的尺寸*/
+}
+#singleSideShadow-2{
+    width: 46%;
+    height: 46%;
+    margin: 2%;
+    background: #ED6A5A;
+    float: left;
+    box-shadow: 6px 6px 6px -3px #555;
+}
+
+#singleSideShadow-3{
+    width: 46%;
+    height: 46%;
+    margin: 2%;
+    background: #ED6A5A;
+    float: left;
+    box-shadow: 6px 0px 6px -3px #555, -6px 0px 6px -3px #555;
+}
+
+#irregular{
+    border: 12px dotted #ED6A5A;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+}
+
+/*
+滤镜
+#dyeingEffect{
+    transition: .5s filter;
+    filter:sepia(1) saturate(4) hue-rotate(295deg);
+}
+
+#dyeingEffect:hover,#dyeingEffect:focus{
+    filter:none;
+}*/
+
+/*混合模式*/
+#dyeingEffect{
+    background-size: cover;
+    background-image:url("../images/effectImg1.png");
+    background-color: #ED6A5A;
+    background-blend-mode: luminosity;
+    transition: 1s background-color;
+}
+
+#dyeingEffect:hover,#dyeingEffect:focus{
+   background-color: transparent;
+}
+
+#woolGlassEffect{
+    position: relative;
+    background-image:url("../images/effectImg1.png");
+    background-size: cover;
+}
+
+#woolGlassEffect>div{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    margin: auto;
+    display: block;
+    color: white;
+    padding: 1em;
+    background:rgba(230, 235, 224, 0.3);
+    overflow: hidden;
+    z-index: 0;
+}
+#woolGlassEffect div:before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image:url("../images/effectImg1.png");
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px);
+    margin: -10px;
+}
+
+
+#angleEffect{
+    background:  #ED6A5A;
+    background:
+    linear-gradient(-150deg,transparent  1.4em,#ED6A5A 0);/*2/根号2 得来的1.4*/
+    border-radius: .5em;
+}
+
+#angleEffect:before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background:linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.4)) no-repeat 100% 0;
+    width:1.73em;
+    height: 3em;
+    transform:translateY(-1.3em) rotate(-30deg);
+    transform-origin:bottom right;
+    border-bottom-left-radius: inherit;
+    box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+}
+
+#hyphens{
+    hyphens:auto;/*自动断词，达到两端页对齐，使用软连字符连接*/
+}
+
+
+/**
+ dt:not(:first-child)
+ dt ~ dt
+ dd + dt
+ */
+#insertingLine dd + dt:before{
+    content: '\A';/*\A代表换行，最好不要使用br  维护性差*/
+    white-space: pre;
+}
+#insertingLine dd +dd :before{
+    content: ", ";
+    font-weight: normal;
+}
+#insertingLine dt,#insertingLine dd{
+    display: inline;
+    font-weight: 400;
+}
+
+#insertingLine dd{
+    margin: 0;
+    font-weight: bold;
+}
+
+#zebraStripes{
+    padding: .5em;
+    line-height: 1.5;
+    color: #E6EBE0;
+    background: #ED6A5A;
+    background-image: linear-gradient(rgba(255,255,255,0.2) 50%,transparent 0);
+    background-size: auto 3em;
+    background-origin: content-box;
+}
+#zebraStripes span{
+    display: block;
 }
