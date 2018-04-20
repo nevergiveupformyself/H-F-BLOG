@@ -1022,3 +1022,55 @@ global
     bottom: 0;
     z-index: -1;
 }
+
+/*loading*/
+.loading-wrapper{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.58);
+    z-index: 99999;
+}
+
+.loading{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 500px;
+    line-height: 500px;
+}
+
+/**
+width:10ch
+等宽字体个数
+ */
+.loading .loading-text{
+    font-family: Consolas, Monaco, monospace;
+    display: inline-block;
+    float: left;
+    color: #ED6A5A;
+    font-weight: bold;
+    width: 11ch;
+    animation: loading-text-typing 3s steps(11) infinite,
+               loading-text-caret 1s steps(1) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid;
+}
+
+@keyframes loading-text-typing {
+     from {
+         width: 0;
+     }
+ }
+@keyframes loading-text-caret {
+     50% {
+         border-color: transparent;
+     }
+}
