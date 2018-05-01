@@ -430,11 +430,11 @@ var initImage = function(){
     var height = 560;
     var arr=[];
     var xMax = width/80,yMax = height/80;
-    for(var i=0;i<xMax;i++){
-        for(var j=0;j< yMax;j++){
+    for(var i=0;i<yMax;i++){
+        for(var j=0;j< xMax;j++){
             arr.push({
-                x:i*80,
-                y:j*80
+              x:j*80,
+              y:i*80
             })
         }
     }
@@ -462,28 +462,22 @@ var initImage = function(){
         mainBitmap = new LBitmap(new LBitmapData(imgList["img"]));
         mainBitmapHeight = mainBitmap.getHeight();
         mainBitmapWidth = mainBitmap.getWidth();
-        var bg = new LBitmap(new LBitmapData("#ED6A5A",0,0,mainBitmapWidth,mainBitmapHeight));
-        backLayer.addChild(bg);
         backLayer.addEventListener(LEvent.ENTER_FRAME,onFrame);
     }
 
-    var index = 0,flagArr=[];
+    var index = -1;
     function onFrame(){
+
         var bitmapData,bitmap;
         var length = arr.length;
-        var flag = Math.floor(Math.random()*(length));
-
-        while(flagArr.indexOf(flag) != -1 ){
-            flag = index;
-            index = index + 1;
-        }
-        if(index > length){
+        index ++;
+        if(index >= length){
+            $(".loading-wrapper").hide();
             backLayer.removeEventListener(LEvent.ENTER_FRAME);
             return;
         }
 
-        flagArr.push(flag);
-        var x = arr[flag].x,y = arr[flag].y;
+        var x = arr[index].x ,y = arr[index].y;
         bitmapData = new LBitmapData(imgList["img"],x,y,80,80);
         bitmap = new LBitmap(bitmapData);
         bitmap.x = x;
