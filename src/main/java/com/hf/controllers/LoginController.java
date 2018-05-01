@@ -29,21 +29,21 @@ public class LoginController {
      * @param password
      * @return
      */
-    @RequestMapping(value = {"/login"},method = RequestMethod.POST)
+    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
     public ModelAndView login(HttpServletRequest request, String username, String password) {
         HttpSession session = request.getSession(false);
-        UsernamePasswordToken usernamePasswordToken=new UsernamePasswordToken(username,password);
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
         //所有Subject都绑定到SecurityManager，与Subject的所有交互都会委托给SecurityManager；可以把Subject认为是一个门面；SecurityManager才是实际的执行者
         Subject subject = SecurityUtils.getSubject();
         ModelAndView modelAndView = new ModelAndView();
         try {
             subject.login(usernamePasswordToken);   //完成登录
-            User user=(User) subject.getPrincipal();
+            User user = (User) subject.getPrincipal();
             session.setAttribute("user", user);
-            modelAndView.setViewName("redirect:"+VIEW_INDEX+".html");
-        } catch(Exception e) {
+            modelAndView.setViewName("redirect:" + VIEW_INDEX + ".html");
+        } catch (Exception e) {
             modelAndView.setViewName(VIEW_LOGIN);
-            modelAndView.addObject("message","账号或密码错误");
+            modelAndView.addObject("message", "账号或密码错误");
         }
         return modelAndView;
     }
@@ -54,23 +54,23 @@ public class LoginController {
      * @param request
      * @return
      */
-    @RequestMapping(value = {"/login","/login.html"},method = RequestMethod.GET)
+    @RequestMapping(value = {"/login", "/login.html"}, method = RequestMethod.GET)
     public String logOut(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
-        if(session != null){
+        if (session != null) {
             User user = (User) session.getAttribute("user");
-            if (user.getUsername() == null){//当session中的user为空,跳转到login视图
-                return  VIEW_LOGIN;
-            }else if (request.getParameter("logout") != null){//当url为登出时,则清除当前subject的信息,跳转到login视图
+            if (user.getUsername() == null) {//当session中的user为空,跳转到login视图
+                return VIEW_LOGIN;
+            } else if (request.getParameter("logout") != null) {//当url为登出时,则清除当前subject的信息,跳转到login视图
                 Subject subject = SecurityUtils.getSubject();
                 subject.logout();
-                return "redirect:"+VIEW_INDEX+".html";
-            }else if(request.getParameter("changeUser") != null){
+                return "redirect:" + VIEW_INDEX + ".html";
+            } else if (request.getParameter("changeUser") != null) {
                 Subject subject = SecurityUtils.getSubject();
                 subject.logout();
                 return VIEW_LOGIN;
             }
-            return "redirect:"+VIEW_INDEX+".html";
+            return "redirect:" + VIEW_INDEX + ".html";
         }
         return VIEW_LOGIN; //如果session为null，返回login
     }
