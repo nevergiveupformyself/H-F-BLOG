@@ -1,24 +1,21 @@
 package com.hf.social;
 
-import com.hf.authorize.SecurityConstants;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.social.SocialAutoConfigurerAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.social.config.annotation.EnableSocial;
-import org.springframework.social.config.annotation.SocialConfigurerAdapter;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionFactory;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.connect.web.ConnectSupport;
 import org.springframework.social.connect.web.ProviderSignInController;
+import org.springframework.social.connect.web.ProviderSignInUtils;
 import org.springframework.social.connect.web.SignInAdapter;
 import org.springframework.web.context.request.NativeWebRequest;
 
-import javax.sql.DataSource;
 import java.lang.reflect.Field;
 
 /**
@@ -29,7 +26,7 @@ import java.lang.reflect.Field;
  **/
 @Configuration
 @EnableSocial
-public class HFSocialConfig extends SocialAutoConfigurerAdapter implements InitializingBean{
+public class HFSocialConfig extends SocialAutoConfigurerAdapter implements InitializingBean {
 
     @Autowired
     private ProviderSignInController providerSignInController;
@@ -51,6 +48,11 @@ public class HFSocialConfig extends SocialAutoConfigurerAdapter implements Initi
         return providerSignInController;
     }
 
+    @Bean
+    public ProviderSignInUtils providerSignInUtils(ConnectionFactoryLocator factoryLocator) {
+        return new ProviderSignInUtils(factoryLocator, getUsersConnectionRepository(factoryLocator));
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         try {
@@ -64,4 +66,6 @@ public class HFSocialConfig extends SocialAutoConfigurerAdapter implements Initi
             e.printStackTrace();
         }
     }
+
+
 }

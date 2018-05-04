@@ -147,7 +147,12 @@
 			<artifactId>spring-social-web</artifactId>
 		</dependency>
 
-
+        <!--微博-->
+		<dependency>
+			<groupId>net.gplatform</groupId>
+			<artifactId>spring-social-weibo</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 
 		<!--热部署插件-->
 		<dependency>
