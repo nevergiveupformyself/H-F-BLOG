@@ -3,6 +3,7 @@ package com.hf.interceptors;
 import com.hf.dto.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by fjm on 2018/1/5.
  */
-public class UserDetailInterceptor implements HandlerInterceptor{
+public class UserDetailInterceptor extends HandlerInterceptorAdapter{
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
@@ -29,13 +30,4 @@ public class UserDetailInterceptor implements HandlerInterceptor{
         return true;
     }
 
-    @Override
-    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-
-    }
-
-    @Override
-    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
-    }
 }
