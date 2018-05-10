@@ -74,4 +74,16 @@ public class LoginController {
         }
         return VIEW_LOGIN; //如果session为null，返回login
     }
+
+
+    /**
+     * 由于使用他人的qq互联appid和secret，所以回调地址只能。。。
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/login/qq")
+    public String redirectProvider(HttpServletRequest request){
+        return "redirect:" + "/signin/qq?" + request.getQueryString();
+    }
 }
