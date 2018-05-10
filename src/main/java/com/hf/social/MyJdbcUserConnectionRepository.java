@@ -5,6 +5,8 @@ import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -14,11 +16,10 @@ import java.util.Set;
  * @author jingmin.feng@hand-china.com
  * @create 2018-05-02 8:33
  **/
-//@Component
 public class MyJdbcUserConnectionRepository implements UsersConnectionRepository{
     @Override
     public List<String> findUserIdsWithConnection(Connection<?> connection) {
-        return null;
+        return new ArrayList<>(1);
     }
 
     @Override
