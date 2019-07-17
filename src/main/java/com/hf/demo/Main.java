@@ -8,8 +8,4 @@ package com.hf.demo;
  **/
 public class Main {
 	private String a = "";
-
-	public static void main(String[] args) {
-
-	}
 }
